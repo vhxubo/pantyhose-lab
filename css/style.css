@@ -93,6 +93,18 @@ h2 { font-size: clamp(26px, 3.6vw, 40px); }
 }
 .nav-links a:hover { color: var(--ink); border-color: var(--gold); }
 
+/* 语言切换 */
+.lang-toggle {
+  cursor: pointer;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em;
+  color: var(--ink-soft); background: transparent;
+  border: 1px solid var(--hairline); border-radius: 999px;
+  padding: 5px 13px; margin-left: clamp(12px, 2vw, 26px);
+  transition: color .2s, border-color .2s;
+  white-space: nowrap;
+}
+.lang-toggle:hover { color: var(--ink); border-color: var(--gold); }
+
 /* ─────────── HERO ─────────── */
 .hero {
   padding: clamp(120px, 16vh, 170px) 0 clamp(48px, 6vw, 80px);
@@ -151,7 +163,7 @@ h2 { font-size: clamp(26px, 3.6vw, 40px); }
 }
 .fl-seam { fill: none; stroke: rgba(201, 162, 107, .55); stroke-width: 1; stroke-dasharray: 4 5; }
 .plinth-cap {
-  margin-top: 18px; text-align: center; white-space: nowrap;
+  margin-top: 18px; text-align: center; white-space: normal; line-height: 1.8;
   font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em;
   color: rgba(233, 224, 211, .55);
 }

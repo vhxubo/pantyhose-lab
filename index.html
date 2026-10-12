@@ -16,16 +16,17 @@
 <nav class="nav">
   <a class="brand" href="#top">
     <span class="brand-mark">D</span>
-    <span class="brand-name">丹尼实验室 <em>DENIER&nbsp;ATELIER</em></span>
+    <span class="brand-name" data-i18n="nav.brand">丹尼实验室 <em>DENIER&nbsp;ATELIER</em></span>
   </a>
   <div class="nav-links">
-    <a href="#lab">光箱</a>
-    <a href="#materials">纤维材质</a>
-    <a href="#colors">色彩</a>
-    <a href="#styles">款式</a>
-    <a href="#brands">品牌</a>
-    <a href="#guide">选购指南</a>
+    <a href="#lab" data-i18n="nav.lab">光箱</a>
+    <a href="#materials" data-i18n="nav.materials">纤维材质</a>
+    <a href="#colors" data-i18n="nav.colors">色彩</a>
+    <a href="#styles" data-i18n="nav.styles">款式</a>
+    <a href="#brands" data-i18n="nav.brands">品牌</a>
+    <a href="#guide" data-i18n="nav.guide">选购指南</a>
   </div>
+  <button class="lang-toggle" id="langToggle" type="button" data-i18n="nav.toggle">EN</button>
 </nav>
 
 <!-- 共享图鉴资源：平铺轮廓 + 织纹 pattern，供款式图鉴的示意图复用 -->
@@ -93,15 +94,15 @@
 <!-- ═══════════════ HERO ═══════════════ -->
 <header class="hero" id="top">
   <div class="hero-copy">
-    <p class="eyebrow reveal r1">HOSIERY SPECIMEN CATALOG · 袜品样本册 · VOL.01</p>
-    <h1 class="reveal r2">透<span class="h-comma">，</span>与<span class="h-solid">不透</span>之间。</h1>
-    <p class="hero-lede reveal r3">一件连裤袜的第一属性，是它让多少光通过。
+    <p class="eyebrow reveal r1" data-i18n="hero.eyebrow">HOSIERY SPECIMEN CATALOG · 袜品样本册 · VOL.01</p>
+    <h1 class="reveal r2" data-i18n="hero.title">透<span class="h-comma">，</span>与<span class="h-solid">不透</span>之间。</h1>
+    <p class="hero-lede reveal r3" data-i18n="hero.lede">一件连裤袜的第一属性，是它让多少光通过。
       丹尼数（Denier, D）越低，纱线越细、织物越透；越高，越密、越实、越耐穿。</p>
-    <p class="hero-sub reveal r4">拖动丹尼仪，从 5D 到 200D 亲眼看区别；
+    <p class="hero-sub reveal r4" data-i18n="hero.sub">拖动丹尼仪，从 5D 到 200D 亲眼看区别；
       再切换纤维与颜色——同一样东西，会呈现完全不同的样子。</p>
     <div class="hero-cta reveal r5">
-      <a class="btn btn-gold" href="#lab">进入光箱 · 拖动看 D 数</a>
-      <a class="btn btn-ghost" href="#materials">先看纤维材质</a>
+      <a class="btn btn-gold" href="#lab" data-i18n="hero.cta1">进入光箱 · 拖动看 D 数</a>
+      <a class="btn btn-ghost" href="#materials" data-i18n="hero.cta2">先看纤维材质</a>
     </div>
   </div>
 
@@ -146,16 +147,16 @@
       <path class="fl-seam" d="M 104 428 Q 112 442 124 442"/>
       <path class="fl-seam" d="M 256 428 Q 248 442 236 442"/>
     </svg>
-    <figcaption class="plinth-cap">FIG.01 — 连裤袜 · 平铺样本 · 70D 天鹅绒 · 经典黑</figcaption>
+    <figcaption class="plinth-cap" data-i18n="hero.figcap">FIG.01 — 连裤袜 · 平铺样本 · 70D 天鹅绒 · 经典黑</figcaption>
   </figure>
 </header>
 
 <!-- ═══════════════ D 尺 ═══════════════ -->
-<section class="dscale" aria-label="丹尼数色阶尺">
+<section class="dscale" aria-label="丹尼数色阶尺" data-i18n-aria="aria.dscale">
   <div class="section-inner">
     <div class="dscale-head">
-      <p class="eyebrow">THE SCALE — 一把丹尼尺</p>
-      <p class="dscale-note">同一双黑袜，在验布灯下的全部变化。<span class="mono-dim">点击任一格 → 载入光箱</span></p>
+      <p class="eyebrow" data-i18n="dscale.eyebrow">THE SCALE — 一把丹尼尺</p>
+      <p class="dscale-note" data-i18n="dscale.note">同一双黑袜，在验布灯下的全部变化。<span class="mono-dim">点击任一格 → 载入光箱</span></p>
     </div>
     <div class="dscale-track" id="dscaleTrack"><!-- JS 生成 --></div>
   </div>
@@ -165,9 +166,9 @@
 <section class="lab" id="lab">
   <div class="section-inner">
     <div class="lab-head">
-      <p class="eyebrow eyebrow-dark">INSPECTION LIGHTBOX — 验布光箱</p>
-      <h2>拖动丹尼仪，<br>亲眼看 5D 到 200D 的区别。</h2>
-      <p class="lab-lede">丹尼是纤维计量单位：每 9,000 米长的纱线重 1 克即为 1D。
+      <p class="eyebrow eyebrow-dark" data-i18n="lab.eyebrow">INSPECTION LIGHTBOX — 验布光箱</p>
+      <h2 data-i18n="lab.title">拖动丹尼仪，<br>亲眼看 5D 到 200D 的区别。</h2>
+      <p class="lab-lede" data-i18n="lab.lede">丹尼是纤维计量单位：每 9,000 米长的纱线重 1 克即为 1D。
         数字越小越透，越大越实。切换材质与颜色，同一 D 数也会呈现不同观感。
         <span class="mono-dim" style="color:rgba(239,231,218,.45)">＊腰臀部位通常单独加厚织造，与腿部 D 数无关。</span></p>
     </div>
@@ -180,14 +181,14 @@
         <p class="readout-cat" id="dCategory">半透自然</p>
         <p class="readout-hint" id="dHint"></p>
         <dl class="readout-spec">
-          <div><dt>材质</dt><dd id="specMat">锦纶 / 尼龙</dd></div>
-          <div><dt>颜色</dt><dd id="specColor">经典黑</dd></div>
+          <div><dt data-i18n="lab.fiberLabel">材质</dt><dd id="specMat">锦纶 / 尼龙</dd></div>
+          <div><dt data-i18n="lab.colorLabel">颜色</dt><dd id="specColor">经典黑</dd></div>
         </dl>
       </div>
 
       <div class="lab-stage">
         <!-- 腿模 SVG -->
-        <svg id="legSvg" viewBox="0 0 360 870" preserveAspectRatio="xMidYMax meet" role="img" aria-label="连裤袜穿着效果示意">
+        <svg id="legSvg" viewBox="0 0 360 870" preserveAspectRatio="xMidYMax meet" role="img" aria-label="连裤袜穿着效果示意" data-i18n-aria="aria.legsvg">
           <defs>
             <radialGradient id="skinGrad" cx="36%" cy="24%" r="98%">
               <stop offset="0" stop-color="#F8ECDF"/>
@@ -245,17 +246,17 @@
         <div class="lens">
           <canvas id="knitCanvas" width="312" height="312" aria-hidden="true"></canvas>
         </div>
-        <span class="lens-cap">KNIT ×40 · 组织密度</span>
+        <span class="lens-cap" data-i18n="lab.lenscap">KNIT ×40 · 组织密度</span>
       </div>
 
       <div class="lab-controls">
         <div class="ctrl-block">
-          <h3 class="ctrl-title">材质 <em>FIBER</em></h3>
-          <div class="mats" id="matTabs" role="tablist" aria-label="材质"><!-- JS 生成 --></div>
+          <h3 class="ctrl-title" data-i18n="lab.fiberTitle">材质 <em>FIBER</em></h3>
+          <div class="mats" id="matTabs" role="tablist" aria-label="材质" data-i18n-aria="aria.mattabs"><!-- JS 生成 --></div>
           <p class="ctrl-note" id="matNote"></p>
         </div>
         <div class="ctrl-block">
-          <h3 class="ctrl-title">颜色 <em>COLOR</em></h3>
+          <h3 class="ctrl-title" data-i18n="lab.colorTitle">颜色 <em>COLOR</em></h3>
           <div class="swatches" id="swatches"><!-- JS 生成 --></div>
         </div>
       </div>
@@ -265,12 +266,12 @@
     <div class="gauge">
       <div class="gauge-scale" aria-hidden="true"></div>
       <input type="range" id="dRange" min="5" max="200" step="1" value="40"
-             aria-label="丹尼数 D" aria-valuemin="5" aria-valuemax="200">
+             aria-label="丹尼数 D" aria-valuemin="5" aria-valuemax="200" data-i18n-aria="aria.drange">
       <div class="gauge-ticks mono-dim">
         <span>5</span><span>20</span><span>40</span><span>70</span><span>120</span><span>200</span>
       </div>
     </div>
-    <p class="lab-foot mono-dim">▸ 光箱原理：与面料检验车间相同——只有在暗箱灯下，才能准确判断织物的透光程度。</p>
+    <p class="lab-foot mono-dim" data-i18n="lab.foot">▸ 光箱原理：与面料检验车间相同——只有在暗箱灯下，才能准确判断织物的透光程度。</p>
   </div>
 </section>
 
@@ -278,52 +279,52 @@
 <section class="materials" id="materials">
   <div class="section-inner">
     <div class="sec-head">
-      <p class="eyebrow">FIBERS — 纤维材质</p>
-      <h2>六种纤维，六种性格。</h2>
-      <p class="sec-lede">D 数相同的袜子，换一种纤维，光泽、手感与厚度都会不同——
+      <p class="eyebrow" data-i18n="fibers.eyebrow">FIBERS — 纤维材质</p>
+      <h2 data-i18n="fibers.title">六种纤维，六种性格。</h2>
+      <p class="sec-lede" data-i18n="fibers.lede">D 数相同的袜子，换一种纤维，光泽、手感与厚度都会不同——
         这正是光箱里可以切换材质的原因。</p>
     </div>
     <div class="mat-grid">
       <article class="mat-card">
         <div class="swatch sw-nylon"><span class="sw-index">SW-01</span></div>
-        <h3>锦纶 / 尼龙 <em>Nylon</em></h3>
-        <p class="mat-spec">缎面光泽 · 四季 · 5D–70D</p>
-        <p>连裤袜的骨架。纤维细可至个位数丹尼，织出的袜子轻薄耐磨、带缎面光泽，
+        <h3 data-i18n="fiber.nylon.name">锦纶 / 尼龙 <em>Nylon</em></h3>
+        <p class="mat-spec" data-i18n="fiber.nylon.spec">缎面光泽 · 四季 · 5D–70D</p>
+        <p data-i18n="fiber.nylon.body">连裤袜的骨架。纤维细可至个位数丹尼，织出的袜子轻薄耐磨、带缎面光泽，
           是"透明感"的主要来源，常见于春夏薄款。</p>
       </article>
       <article class="mat-card">
         <div class="swatch sw-spandex"><span class="sw-index">SW-02</span></div>
-        <h3>氨纶 / 莱卡 <em>Spandex</em></h3>
-        <p class="mat-spec">高弹贴身 · 全季 · 混纺 10%–30%</p>
-        <p>弹力的来源。让袜子贴合腿型、久穿不松垮。几乎不存在 100% 氨纶的袜子——
+        <h3 data-i18n="fiber.spandex.name">氨纶 / 莱卡 <em>Spandex</em></h3>
+        <p class="mat-spec" data-i18n="fiber.spandex.spec">高弹贴身 · 全季 · 混纺 10%–30%</p>
+        <p data-i18n="fiber.spandex.body">弹力的来源。让袜子贴合腿型、久穿不松垮。几乎不存在 100% 氨纶的袜子——
           它总是与锦纶搭档混纺，比例越高回弹越好。</p>
       </article>
       <article class="mat-card">
         <div class="swatch sw-velvet"><span class="sw-index">SW-03</span></div>
-        <h3>天鹅绒 <em>Velvet</em></h3>
-        <p class="mat-spec">哑光绒面 · 秋冬 · 80D–400D</p>
-        <p>加厚季节的主力。绒感织法让表面呈雾面哑光，视觉上更收敛显瘦，
+        <h3 data-i18n="fiber.velvet.name">天鹅绒 <em>Velvet</em></h3>
+        <p class="mat-spec" data-i18n="fiber.velvet.spec">哑光绒面 · 秋冬 · 80D–400D</p>
+        <p data-i18n="fiber.velvet.body">加厚季节的主力。绒感织法让表面呈雾面哑光，视觉上更收敛显瘦，
           触感温润厚实，是秋冬连裤袜最常见的选择。</p>
       </article>
       <article class="mat-card">
         <div class="swatch sw-cotton"><span class="sw-index">SW-04</span></div>
-        <h3>棉 <em>Cotton</em></h3>
-        <p class="mat-spec">透气亲肤 · 春秋 · 40D–110D</p>
-        <p>哑光质感、吸湿透气，风格偏休闲日系。缺点是弹性有限、易松弛，
+        <h3 data-i18n="fiber.cotton.name">棉 <em>Cotton</em></h3>
+        <p class="mat-spec" data-i18n="fiber.cotton.spec">透气亲肤 · 春秋 · 40D–110D</p>
+        <p data-i18n="fiber.cotton.body">哑光质感、吸湿透气，风格偏休闲日系。缺点是弹性有限、易松弛，
           通常与氨纶混纺改善版型，适合不喜欢"反光感"的人。</p>
       </article>
       <article class="mat-card">
         <div class="swatch sw-wool"><span class="sw-index">SW-05</span></div>
-        <h3>羊毛 <em>Wool</em></h3>
-        <p class="mat-spec">蓬松保暖 · 严冬 · 100D 以上</p>
-        <p>保暖担当。羊毛纤维天然卷曲，能锁住一层静止空气，同等丹尼下比尼龙更厚更暖，
+        <h3 data-i18n="fiber.wool.name">羊毛 <em>Wool</em></h3>
+        <p class="mat-spec" data-i18n="fiber.wool.spec">蓬松保暖 · 严冬 · 100D 以上</p>
+        <p data-i18n="fiber.wool.body">保暖担当。羊毛纤维天然卷曲，能锁住一层静止空气，同等丹尼下比尼龙更厚更暖，
           是冬季裙装的安全搭档，常与锦纶混纺增强耐用度。</p>
       </article>
       <article class="mat-card">
         <div class="swatch sw-modal"><span class="sw-index">SW-06</span></div>
-        <h3>莫代尔 <em>Modal</em></h3>
-        <p class="mat-spec">垂坠丝滑 · 春秋 · 20D–60D</p>
-        <p>木源再生纤维，光泽介于缎面与哑光之间，垂坠感好、吸湿性强，
+        <h3 data-i18n="fiber.modal.name">莫代尔 <em>Modal</em></h3>
+        <p class="mat-spec" data-i18n="fiber.modal.spec">垂坠丝滑 · 春秋 · 20D–60D</p>
+        <p data-i18n="fiber.modal.body">木源再生纤维，光泽介于缎面与哑光之间，垂坠感好、吸湿性强，
           适合追求"素肌感"的春秋薄款，亲肤度接近真丝。</p>
       </article>
     </div>
@@ -334,18 +335,18 @@
 <section class="colors" id="colors">
   <div class="section-inner">
     <div class="sec-head">
-      <p class="eyebrow">COLORWAYS — 色彩</p>
-      <h2>同一双袜子，换一种光。</h2>
-      <p class="sec-lede">颜色与 D 数是相乘的关系：同一种色，8D 时若有似无，120D 时才完全显色。
+      <p class="eyebrow" data-i18n="colors.eyebrow">COLORWAYS — 色彩</p>
+      <h2 data-i18n="colors.title">同一双袜子，换一种光。</h2>
+      <p class="sec-lede" data-i18n="colors.lede">颜色与 D 数是相乘的关系：同一种色，8D 时若有似无，120D 时才完全显色。
         点击下方色卡，即可在光箱中试穿。</p>
     </div>
     <div class="color-grid" id="colorGrid"><!-- JS 生成 --></div>
     <div class="color-notes">
-      <div class="color-note"><h3>黑</h3><p>最百搭也最显瘦。D 数越高，黑色的"力量感"越强——8D 黑是雾，120D 黑是墨。</p></div>
-      <div class="color-note"><h3>裸肤</h3><p>第二层皮肤。按腿色选深浅，5D 裸肤近乎隐形，是面试与正式场合的安全牌。</p></div>
-      <div class="color-note"><h3>灰 · 咖啡</h3><p>柔和的过渡色，适合大地色系穿搭，比黑温柔，比裸肤更有存在感。</p></div>
-      <div class="color-note"><h3>藏青 · 酒红</h3><p>整身深色穿搭里的呼吸点，低饱和彩色袜是进阶玩家的常用巧思。</p></div>
-      <div class="color-note"><h3>奶油白</h3><p>清爽但挑搭配、易显脏，常见于洛丽塔与制服穿搭，通勤场合需谨慎。</p></div>
+      <div class="color-note"><h3 data-i18n="colors.n1.t">黑</h3><p data-i18n="colors.n1.b">最百搭也最显瘦。D 数越高，黑色的"力量感"越强——8D 黑是雾，120D 黑是墨。</p></div>
+      <div class="color-note"><h3 data-i18n="colors.n2.t">裸肤</h3><p data-i18n="colors.n2.b">第二层皮肤。按腿色选深浅，5D 裸肤近乎隐形，是面试与正式场合的安全牌。</p></div>
+      <div class="color-note"><h3 data-i18n="colors.n3.t">灰 · 咖啡</h3><p data-i18n="colors.n3.b">柔和的过渡色，适合大地色系穿搭，比黑温柔，比裸肤更有存在感。</p></div>
+      <div class="color-note"><h3 data-i18n="colors.n4.t">藏青 · 酒红</h3><p data-i18n="colors.n4.b">整身深色穿搭里的呼吸点，低饱和彩色袜是进阶玩家的常用巧思。</p></div>
+      <div class="color-note"><h3 data-i18n="colors.n5.t">奶油白</h3><p data-i18n="colors.n5.b">清爽但挑搭配、易显脏，常见于洛丽塔与制服穿搭，通勤场合需谨慎。</p></div>
     </div>
   </div>
 </section>
@@ -354,9 +355,9 @@
 <section class="styles" id="styles">
   <div class="section-inner">
     <div class="sec-head">
-      <p class="eyebrow">CUTS &amp; KNITS — 款式形制</p>
-      <h2>十四种形制，一张图谱。</h2>
-      <p class="sec-lede">D 数之外，款式决定"哪里厚、哪里空、怎么织"。
+      <p class="eyebrow" data-i18n="styles.eyebrow">CUTS &amp; KNITS — 款式形制</p>
+      <h2 data-i18n="styles.title">十四种形制，一张图谱。</h2>
+      <p class="sec-lede" data-i18n="styles.lede">D 数之外，款式决定"哪里厚、哪里空、怎么织"。
         从基础形制到织法花样，每张示意图都对应同一双平铺样本——金色虚线标出的就是该款的独有特征。</p>
     </div>
     <div class="style-grid">
@@ -372,9 +373,9 @@
             <use href="#flatWaist" fill="rgba(201,162,107,.25)" stroke="rgba(201,162,107,.8)" stroke-width="1.6"/>
           </svg>
         </div>
-        <h3>经典薄透 <em>CLASSIC</em></h3>
-        <p class="mat-spec">基础形制 · 全季 · 5D–200D</p>
-        <p>一体织造的原点：裤头、裤身与两腿连续成形，没有附加结构。
+        <h3 data-i18n="style.classic.name">经典薄透 <em>CLASSIC</em></h3>
+        <p class="mat-spec" data-i18n="style.classic.spec">基础形制 · 全季 · 5D–200D</p>
+        <p data-i18n="style.classic.body">一体织造的原点：裤头、裤身与两腿连续成形，没有附加结构。
           一切差别都交给 D 数与纤维——光箱里调的就是它。</p>
       </article>
 
@@ -391,9 +392,9 @@
             <use href="#flatWaist" fill="rgba(201,162,107,.25)" stroke="rgba(201,162,107,.8)" stroke-width="1.6"/>
           </svg>
         </div>
-        <h3>T裆无缝 <em>T-GUSSET</em></h3>
-        <p class="mat-spec">无前中缝 · 贴身不移位 · 紧身下装友好</p>
-        <p>裆部以 T 形织缝取代贯穿正面的中缝：贴身更服帖，
+        <h3 data-i18n="style.tgusset.name">T裆无缝 <em>T-GUSSET</em></h3>
+        <p class="mat-spec" data-i18n="style.tgusset.spec">无前中缝 · 贴身不移位 · 紧身下装友好</p>
+        <p data-i18n="style.tgusset.body">裆部以 T 形织缝取代贯穿正面的中缝：贴身更服帖，
           浅色裤装、紧身裙前不再有一道"线"。基础款之上的第一道分水岭。</p>
       </article>
 
@@ -410,9 +411,9 @@
             <use href="#flatWaist" fill="rgba(201,162,107,.25)" stroke="rgba(201,162,107,.8)" stroke-width="1.6"/>
           </svg>
         </div>
-        <h3>棉裆加固 <em>COTTON GUSSET</em></h3>
-        <p class="mat-spec">裆部棉衬 · 吸湿透气 · 卫生舒适</p>
-        <p>裆部缝入一小块棉质衬裆：吸湿、透气、减少摩擦，
+        <h3 data-i18n="style.gusset.name">棉裆加固 <em>COTTON GUSSET</em></h3>
+        <p class="mat-spec" data-i18n="style.gusset.spec">裆部棉衬 · 吸湿透气 · 卫生舒适</p>
+        <p data-i18n="style.gusset.body">裆部缝入一小块棉质衬裆：吸湿、透气、减少摩擦，
           也免去化纤裆直接贴肤的闷热——日常款的重要分水岭，选购时先看这里。</p>
       </article>
 
@@ -429,9 +430,9 @@
             <use href="#flatBody" fill="none" stroke="rgba(201,162,107,.8)" stroke-width="2.2"/>
           </svg>
         </div>
-        <h3>收腹裤头 <em>CONTROL TOP</em></h3>
-        <p class="mat-spec">加压裤身 · 轻塑形 · 腰腹致臀部</p>
-        <p>腰腹到臀部织得更紧更密，轻推收腹、顺带提臀。
+        <h3 data-i18n="style.control.name">收腹裤头 <em>CONTROL TOP</em></h3>
+        <p class="mat-spec" data-i18n="style.control.spec">加压裤身 · 轻塑形 · 腰腹致臀部</p>
+        <p data-i18n="style.control.body">腰腹到臀部织得更紧更密，轻推收腹、顺带提臀。
           好的 control top 裤头足够长，在腰上"切"出一道痕的多半是尺码不对。</p>
       </article>
 
@@ -446,9 +447,9 @@
             <use href="#flatWaist" fill="rgba(201,162,107,.25)" stroke="rgba(201,162,107,.8)" stroke-width="1.6"/>
           </svg>
         </div>
-        <h3>压力分级 <em>COMPRESSION</em></h3>
-        <p class="mat-spec">踝部最紧 · 向上递减 · 运动/医用</p>
-        <p>梯度压力促进血液回流：脚踝压力最大，越向上越松。
+        <h3 data-i18n="style.comp.name">压力分级 <em>COMPRESSION</em></h3>
+        <p class="mat-spec" data-i18n="style.comp.spec">踝部最紧 · 向上递减 · 运动/医用</p>
+        <p data-i18n="style.comp.body">梯度压力促进血液回流：脚踝压力最大，越向上越松。
           运动恢复与久站久坐族的常用选择；医疗级压力袜请遵医嘱选购。</p>
       </article>
 
@@ -463,9 +464,9 @@
             <use href="#flatWaist" fill="rgba(201,162,107,.25)" stroke="rgba(201,162,107,.8)" stroke-width="1.6"/>
           </svg>
         </div>
-        <h3>防勾丝 <em>RUN-RESISTANT</em></h3>
-        <p class="mat-spec">高捻纱 · 耐穿优先 · 光泽略低</p>
-        <p>以高捻度纱线与加密组织减缓脱散：勾到不会一路"开铁路"。
+        <h3 data-i18n="style.run.name">防勾丝 <em>RUN-RESISTANT</em></h3>
+        <p class="mat-spec" data-i18n="style.run.spec">高捻纱 · 耐穿优先 · 光泽略低</p>
+        <p data-i18n="style.run.body">以高捻度纱线与加密组织减缓脱散：勾到不会一路"开铁路"。
           代价是手感稍硬、透明感略降——通勤厚款里最实用的取向。</p>
       </article>
 
@@ -484,9 +485,9 @@
             <use href="#flatWaist" fill="rgba(201,162,107,.25)" stroke="rgba(201,162,107,.8)" stroke-width="1.6"/>
           </svg>
         </div>
-        <h3>露趾袜头 <em>SANDAL TOE</em></h3>
-        <p class="mat-spec">趾部无加固 · 鱼嘴鞋伴侣</p>
-        <p>袜头不做加深织造，趾部近乎隐形，专配鱼嘴凉鞋；
+        <h3 data-i18n="style.sandal.name">露趾袜头 <em>SANDAL TOE</em></h3>
+        <p class="mat-spec" data-i18n="style.sandal.spec">趾部无加固 · 鱼嘴鞋伴侣</p>
+        <p data-i18n="style.sandal.body">袜头不做加深织造，趾部近乎隐形，专配鱼嘴凉鞋；
           即便穿包头皮鞋，脚尖也不会在薄纱里"露馅"。行话就叫 sandal toe。</p>
       </article>
 
@@ -505,9 +506,9 @@
             <use href="#flatWaist" fill="rgba(201,162,107,.25)" stroke="rgba(201,162,107,.8)" stroke-width="1.6"/>
           </svg>
         </div>
-        <h3>踩脚 <em>STIRRUP</em></h3>
-        <p class="mat-spec">脚掌留空 · 踩脚带固定 · 舞蹈/瑜伽</p>
-        <p>只包腿不包脚，靠足弓处的踩脚带防滑固定：
+        <h3 data-i18n="style.stirrup.name">踩脚 <em>STIRRUP</em></h3>
+        <p class="mat-spec" data-i18n="style.stirrup.spec">脚掌留空 · 踩脚带固定 · 舞蹈/瑜伽</p>
+        <p data-i18n="style.stirrup.body">只包腿不包脚，靠足弓处的踩脚带防滑固定：
           练功房与瑜伽课的常客，不挤脚趾、边缘不上窜，光脚穿鞋也不冲突。</p>
       </article>
 
@@ -522,9 +523,9 @@
             <use href="#flatWaist" fill="rgba(201,162,107,.25)" stroke="rgba(201,162,107,.8)" stroke-width="1.6"/>
           </svg>
         </div>
-        <h3>网袜 <em>FISHNET</em></h3>
-        <p class="mat-spec">菱形网孔 · 造型感 · 网目定风格</p>
-        <p>不靠密度靠图案：网目从细密到 oversized，气质从日常点缀一路走到朋克与时装屋。
+        <h3 data-i18n="style.fishnet.name">网袜 <em>FISHNET</em></h3>
+        <p class="mat-spec" data-i18n="style.fishnet.spec">菱形网孔 · 造型感 · 网目定风格</p>
+        <p data-i18n="style.fishnet.body">不靠密度靠图案：网目从细密到 oversized，气质从日常点缀一路走到朋克与时装屋。
           网孔越大越张扬，也越挑场合。</p>
       </article>
 
@@ -539,9 +540,9 @@
             <use href="#flatWaist" fill="rgba(201,162,107,.25)" stroke="rgba(201,162,107,.8)" stroke-width="1.6"/>
           </svg>
         </div>
-        <h3>罗纹 <em>RIBBED</em></h3>
-        <p class="mat-spec">竖向纹路 · 复古学院气 · 秋冬</p>
-        <p>纹路沿腿长方向排列，视觉上收窄拉长，自带复古学院感。
+        <h3 data-i18n="style.ribbed.name">罗纹 <em>RIBBED</em></h3>
+        <p class="mat-spec" data-i18n="style.ribbed.spec">竖向纹路 · 复古学院气 · 秋冬</p>
+        <p data-i18n="style.ribbed.body">纹路沿腿长方向排列，视觉上收窄拉长，自带复古学院感。
           多见于羊毛、棉等秋冬厚袜，是"针织感"穿搭的常用件。</p>
       </article>
 
@@ -556,9 +557,9 @@
             <use href="#flatWaist" fill="rgba(201,162,107,.25)" stroke="rgba(201,162,107,.8)" stroke-width="1.6"/>
           </svg>
         </div>
-        <h3>蕾丝 <em>LACE</em></h3>
-        <p class="mat-spec">花纹镂空 · 仪式感 · 需护甲</p>
-        <p>组织间直接留出花纹镂空，从极细网眼到华丽大花。
+        <h3 data-i18n="style.lace.name">蕾丝 <em>LACE</em></h3>
+        <p class="mat-spec" data-i18n="style.lace.spec">花纹镂空 · 仪式感 · 需护甲</p>
+        <p data-i18n="style.lace.body">组织间直接留出花纹镂空，从极细网眼到华丽大花。
           比薄纱更"盛装"，也更需要摘掉戒指、修平指甲——勾丝是蕾丝的天敌。</p>
       </article>
 
@@ -573,9 +574,9 @@
             <use href="#flatWaist" fill="rgba(201,162,107,.25)" stroke="rgba(201,162,107,.8)" stroke-width="1.6"/>
           </svg>
         </div>
-        <h3>提花图案 <em>PATTERNED</em></h3>
-        <p class="mat-spec">双色织入 · 波点/格纹/菱形 · 40D 起更清晰</p>
-        <p>织造时直接把图案织进织物：波点、格纹、菱形与爱心。
+        <h3 data-i18n="style.patterned.name">提花图案 <em>PATTERNED</em></h3>
+        <p class="mat-spec" data-i18n="style.patterned.spec">双色织入 · 波点/格纹/菱形 · 40D 起更清晰</p>
+        <p data-i18n="style.patterned.body">织造时直接把图案织进织物：波点、格纹、菱形与爱心。
           图案要清楚，通常 40D 起步——太薄的底布会让花纹糊成一团。</p>
       </article>
 
@@ -592,9 +593,9 @@
             <use href="#flatWaist" fill="rgba(201,162,107,.25)" stroke="rgba(201,162,107,.8)" stroke-width="1.6"/>
           </svg>
         </div>
-        <h3>假高筒 <em>MOCK STOCKING</em></h3>
-        <p class="mat-spec">视错觉分界 · 复古风情</p>
-        <p>大腿处织出"高筒袜"的分界与袜口，连裤袜穿出吊带袜的复古观感——
+        <h3 data-i18n="style.mockstock.name">假高筒 <em>MOCK STOCKING</em></h3>
+        <p class="mat-spec" data-i18n="style.mockstock.spec">视错觉分界 · 复古风情</p>
+        <p data-i18n="style.mockstock.body">大腿处织出"高筒袜"的分界与袜口，连裤袜穿出吊带袜的复古观感——
           省去吊袜带，风情不打折。复古造型与摄影里的常客。</p>
       </article>
 
@@ -610,9 +611,9 @@
             <use href="#flatBody" fill="none" stroke="rgba(201,162,107,.8)" stroke-width="2.2"/>
           </svg>
         </div>
-        <h3>光腿神器 <em>FLEECE-LINED</em></h3>
-        <p class="mat-spec">外薄内绒 · 冬季伪素腿 · 看三处</p>
-        <p>外层肤色薄纱、内层抓绒，冬天伪装裸腿。
+        <h3 data-i18n="style.fleece.name">光腿神器 <em>FLEECE-LINED</em></h3>
+        <p class="mat-spec" data-i18n="style.fleece.spec">外薄内绒 · 冬季伪素腿 · 看三处</p>
+        <p data-i18n="style.fleece.body">外层肤色薄纱、内层抓绒，冬天伪装裸腿。
           选购看三处：肤色是否分深浅码、裤头会不会假白、内绒掉不掉毛。</p>
       </article>
 
@@ -624,153 +625,153 @@
 <section class="brands" id="brands">
   <div class="section-inner">
     <div class="sec-head">
-      <p class="eyebrow">THE MAKERS — 品牌馆</p>
-      <h2>谁在做这双袜子。</h2>
-      <p class="sec-lede">从奥地利的奢华织造到义乌的超级产能，连裤袜是一条全球化的产业链。
+      <p class="eyebrow" data-i18n="brands.eyebrow">THE MAKERS — 品牌馆</p>
+      <h2 data-i18n="brands.title">谁在做这双袜子。</h2>
+      <p class="sec-lede" data-i18n="brands.lede">从奥地利的奢华织造到义乌的超级产能，连裤袜是一条全球化的产业链。
         按地区巡礼十六个代表品牌——只做科普性梳理，排名不分先后。</p>
     </div>
 
-    <h3 class="region-head">欧洲 <em>EUROPE</em></h3>
+    <h3 class="region-head"><span data-i18n="brands.region.eu">欧洲</span> <em data-i18n="brands.region.eu.tag">EUROPE</em></h3>
     <div class="brand-grid">
       <article class="brand-card">
         <span class="brand-tile" aria-hidden="true">W</span>
         <div>
-          <h3>沃尔福特 <em>WOLFORD</em></h3>
-          <p class="brand-spec">奥地利 · 1950 · 奢华</p>
-          <p class="brand-desc">Fatal 系列"一袜成裙"，天鹅绒手感与无缝工艺是红毯与秀场的常客。</p>
+          <h3 data-i18n="brand.wolford.name">沃尔福特 <em>WOLFORD</em></h3>
+          <p class="brand-spec" data-i18n="brand.wolford.spec">奥地利 · 1950 · 奢华</p>
+          <p class="brand-desc" data-i18n="brand.wolford.desc">Fatal 系列"一袜成裙"，天鹅绒手感与无缝工艺是红毯与秀场的常客。</p>
         </div>
       </article>
       <article class="brand-card">
         <span class="brand-tile" aria-hidden="true">F</span>
         <div>
-          <h3>法尔克 <em>FALKE</em></h3>
-          <p class="brand-spec">德国 · 1895 · 高端日常</p>
-          <p class="brand-desc">四代家族经营，以稳定的品质基本款与运动压力袜线著称，德式"讲究"的代表。</p>
+          <h3 data-i18n="brand.falke.name">法尔克 <em>FALKE</em></h3>
+          <p class="brand-spec" data-i18n="brand.falke.spec">德国 · 1895 · 高端日常</p>
+          <p class="brand-desc" data-i18n="brand.falke.desc">四代家族经营，以稳定的品质基本款与运动压力袜线著称，德式"讲究"的代表。</p>
         </div>
       </article>
       <article class="brand-card">
         <span class="brand-tile" aria-hidden="true">C</span>
         <div>
-          <h3>卡泽多尼亚 <em>CALZEDONIA</em></h3>
-          <p class="brand-spec">意大利 · 1986 · 大众时尚</p>
-          <p class="brand-desc">全球连锁的"袜子橱窗"，花色款式库极大，入门试色与应季款的首选渠道之一。</p>
+          <h3 data-i18n="brand.calzedonia.name">卡泽多尼亚 <em>CALZEDONIA</em></h3>
+          <p class="brand-spec" data-i18n="brand.calzedonia.spec">意大利 · 1986 · 大众时尚</p>
+          <p class="brand-desc" data-i18n="brand.calzedonia.desc">全球连锁的"袜子橱窗"，花色款式库极大，入门试色与应季款的首选渠道之一。</p>
         </div>
       </article>
       <article class="brand-card">
         <span class="brand-tile" aria-hidden="true">Ò</span>
         <div>
-          <h3>奥罗布鲁 <em>OROBLÙ</em></h3>
-          <p class="brand-spec">意大利 · 1994 · 高端薄透</p>
-          <p class="brand-desc">托斯卡纳织造，超薄款的均匀度与光泽出色，"素肌感"路线的代表厂牌。</p>
+          <h3 data-i18n="brand.oroblu.name">奥罗布鲁 <em>OROBLÙ</em></h3>
+          <p class="brand-spec" data-i18n="brand.oroblu.spec">意大利 · 1994 · 高端薄透</p>
+          <p class="brand-desc" data-i18n="brand.oroblu.desc">托斯卡纳织造，超薄款的均匀度与光泽出色，"素肌感"路线的代表厂牌。</p>
         </div>
       </article>
       <article class="brand-card">
         <span class="brand-tile" aria-hidden="true">C</span>
         <div>
-          <h3>卡瓦利尼 <em>EMILIO CAVALLINI</em></h3>
-          <p class="brand-spec">意大利 · 1970 · 设计师款</p>
-          <p class="brand-desc">提花与印花图案袜的代表，条纹、格纹玩得出神入化，常年与时装屋合作。</p>
+          <h3 data-i18n="brand.cavallini.name">卡瓦利尼 <em>EMILIO CAVALLINI</em></h3>
+          <p class="brand-spec" data-i18n="brand.cavallini.spec">意大利 · 1970 · 设计师款</p>
+          <p class="brand-desc" data-i18n="brand.cavallini.desc">提花与印花图案袜的代表，条纹、格纹玩得出神入化，常年与时装屋合作。</p>
         </div>
       </article>
       <article class="brand-card">
         <span class="brand-tile" aria-hidden="true">D</span>
         <div>
-          <h3>迪姆 <em>DIM</em></h3>
-          <p class="brand-spec">法国 · 1953 · 国民经典</p>
-          <p class="brand-desc">曾把连裤袜带进法国大众衣橱的品牌，Dim Up 系列长销至今。</p>
+          <h3 data-i18n="brand.dim.name">迪姆 <em>DIM</em></h3>
+          <p class="brand-spec" data-i18n="brand.dim.spec">法国 · 1953 · 国民经典</p>
+          <p class="brand-desc" data-i18n="brand.dim.desc">曾把连裤袜带进法国大众衣橱的品牌，Dim Up 系列长销至今。</p>
         </div>
       </article>
       <article class="brand-card">
         <span class="brand-tile" aria-hidden="true">G</span>
         <div>
-          <h3>热尔贝 <em>GERBE</em></h3>
-          <p class="brand-spec">法国 · 1904 · 奢华传统</p>
-          <p class="brand-desc">从长筒丝袜时代延续下来的法国老铺，坚持本土制造，档案里存着整个世纪的花样。</p>
+          <h3 data-i18n="brand.gerbe.name">热尔贝 <em>GERBE</em></h3>
+          <p class="brand-spec" data-i18n="brand.gerbe.spec">法国 · 1904 · 奢华传统</p>
+          <p class="brand-desc" data-i18n="brand.gerbe.desc">从长筒丝袜时代延续下来的法国老铺，坚持本土制造，档案里存着整个世纪的花样。</p>
         </div>
       </article>
       <article class="brand-card">
         <span class="brand-tile" aria-hidden="true">G</span>
         <div>
-          <h3>加塔 <em>GATTA</em></h3>
-          <p class="brand-spec">波兰 · 1993 · 高性价比</p>
-          <p class="brand-desc">波兰是欧洲袜业出口大国，Gatta 以平价与全色系见长，是欧洲"日常多买几双"的答案。</p>
+          <h3 data-i18n="brand.gatta.name">加塔 <em>GATTA</em></h3>
+          <p class="brand-spec" data-i18n="brand.gatta.spec">波兰 · 1993 · 高性价比</p>
+          <p class="brand-desc" data-i18n="brand.gatta.desc">波兰是欧洲袜业出口大国，Gatta 以平价与全色系见长，是欧洲"日常多买几双"的答案。</p>
         </div>
       </article>
       <article class="brand-card">
         <span class="brand-tile" aria-hidden="true">P</span>
         <div>
-          <h3>蕾蒂波莉 <em>PRETTY POLLY</em></h3>
-          <p class="brand-spec">英国 · 1919 · 国民老牌</p>
-          <p class="brand-desc">诺丁汉袜都出品，超薄与无缝技术的普及者，英剧与街头一样常见。</p>
+          <h3 data-i18n="brand.prettypolly.name">蕾蒂波莉 <em>PRETTY POLLY</em></h3>
+          <p class="brand-spec" data-i18n="brand.prettypolly.spec">英国 · 1919 · 国民老牌</p>
+          <p class="brand-desc" data-i18n="brand.prettypolly.desc">诺丁汉袜都出品，超薄与无缝技术的普及者，英剧与街头一样常见。</p>
         </div>
       </article>
       <article class="brand-card">
         <span class="brand-tile" aria-hidden="true">S</span>
         <div>
-          <h3>瑞典袜业 <em>SWEDISH STOCKINGS</em></h3>
-          <p class="brand-spec">瑞典 · 2010 · 可持续</p>
-          <p class="brand-desc">以回收尼龙织造连裤袜的新一代品牌，把环保主张做成了主业。</p>
+          <h3 data-i18n="brand.swedish.name">瑞典袜业 <em>SWEDISH STOCKINGS</em></h3>
+          <p class="brand-spec" data-i18n="brand.swedish.spec">瑞典 · 2010 · 可持续</p>
+          <p class="brand-desc" data-i18n="brand.swedish.desc">以回收尼龙织造连裤袜的新一代品牌，把环保主张做成了主业。</p>
         </div>
       </article>
     </div>
 
-    <h3 class="region-head">美洲 <em>AMERICAS</em></h3>
+    <h3 class="region-head"><span data-i18n="brands.region.am">美洲</span> <em data-i18n="brands.region.am.tag">AMERICAS</em></h3>
     <div class="brand-grid">
       <article class="brand-card">
         <span class="brand-tile" aria-hidden="true">C</span>
         <div>
-          <h3>卡佩齐奥 <em>CAPEZIO</em></h3>
-          <p class="brand-spec">美国 · 1887 · 舞蹈专业</p>
-          <p class="brand-desc">纽约起家的舞蹈用品王国，芭蕾与舞蹈袜的行业标配，舞台后台随处可见。</p>
+          <h3 data-i18n="brand.capezio.name">卡佩齐奥 <em>CAPEZIO</em></h3>
+          <p class="brand-spec" data-i18n="brand.capezio.spec">美国 · 1887 · 舞蹈专业</p>
+          <p class="brand-desc" data-i18n="brand.capezio.desc">纽约起家的舞蹈用品王国，芭蕾与舞蹈袜的行业标配，舞台后台随处可见。</p>
         </div>
       </article>
       <article class="brand-card">
         <span class="brand-tile" aria-hidden="true">L</span>
         <div>
-          <h3>莱格丝 <em>L'EGGS</em></h3>
-          <p class="brand-spec">美国 · 1969 · 超市传奇</p>
-          <p class="brand-desc">鸡蛋形塑料盒把连裤袜摆上超市货架的零售史经典案例，包装本身就是广告。</p>
+          <h3 data-i18n="brand.leggs.name">莱格丝 <em>L'EGGS</em></h3>
+          <p class="brand-spec" data-i18n="brand.leggs.spec">美国 · 1969 · 超市传奇</p>
+          <p class="brand-desc" data-i18n="brand.leggs.desc">鸡蛋形塑料盒把连裤袜摆上超市货架的零售史经典案例，包装本身就是广告。</p>
         </div>
       </article>
     </div>
 
-    <h3 class="region-head">亚洲 <em>ASIA</em></h3>
+    <h3 class="region-head"><span data-i18n="brands.region.asia">亚洲</span> <em data-i18n="brands.region.asia.tag">ASIA</em></h3>
     <div class="brand-grid">
       <article class="brand-card">
         <span class="brand-tile" aria-hidden="true">厚</span>
         <div>
-          <h3>厚木 <em>ATSUGI</em></h3>
-          <p class="brand-spec">日本 · 1907 · 国民薄透</p>
-          <p class="brand-desc">日本连裤袜市场长期第一的品牌，日常线 ASTIGU 在便利店与药妆店随处可见。</p>
+          <h3 data-i18n="brand.atsugi.name">厚木 <em>ATSUGI</em></h3>
+          <p class="brand-spec" data-i18n="brand.atsugi.spec">日本 · 1907 · 国民薄透</p>
+          <p class="brand-desc" data-i18n="brand.atsugi.desc">日本连裤袜市场长期第一的品牌，日常线 ASTIGU 在便利店与药妆店随处可见。</p>
         </div>
       </article>
       <article class="brand-card">
         <span class="brand-tile" aria-hidden="true">郡</span>
         <div>
-          <h3>郡是 <em>GUNZE</em></h3>
-          <p class="brand-spec">日本 · 1896 · 综合老牌</p>
-          <p class="brand-desc">京都起家的袜品与内衣大型制造商，基础款扎实，技术积累跨越三个世纪。</p>
+          <h3 data-i18n="brand.gunze.name">郡是 <em>GUNZE</em></h3>
+          <p class="brand-spec" data-i18n="brand.gunze.spec">日本 · 1896 · 综合老牌</p>
+          <p class="brand-desc" data-i18n="brand.gunze.desc">京都起家的袜品与内衣大型制造商，基础款扎实，技术积累跨越三个世纪。</p>
         </div>
       </article>
       <article class="brand-card">
         <span class="brand-tile" aria-hidden="true">浪</span>
         <div>
-          <h3>浪莎 <em>LANGSHA</em></h3>
-          <p class="brand-spec">中国 · 1995 · 大众龙头</p>
-          <p class="brand-desc">义乌袜都的代表企业，产销规模居世界前列，商超货架上的"国民袜子"。</p>
+          <h3 data-i18n="brand.langsha.name">浪莎 <em>LANGSHA</em></h3>
+          <p class="brand-spec" data-i18n="brand.langsha.spec">中国 · 1995 · 大众龙头</p>
+          <p class="brand-desc" data-i18n="brand.langsha.desc">义乌袜都的代表企业，产销规模居世界前列，商超货架上的"国民袜子"。</p>
         </div>
       </article>
       <article class="brand-card">
         <span class="brand-tile" aria-hidden="true">梦</span>
         <div>
-          <h3>梦娜 <em>MONA</em></h3>
-          <p class="brand-spec">中国 · 1994 · 商超主力</p>
-          <p class="brand-desc">义乌系老牌，基本款与连裤袜的主力供应商，渠道覆盖全国的商超系统。</p>
+          <h3 data-i18n="brand.mona.name">梦娜 <em>MONA</em></h3>
+          <p class="brand-spec" data-i18n="brand.mona.spec">中国 · 1994 · 商超主力</p>
+          <p class="brand-desc" data-i18n="brand.mona.desc">义乌系老牌，基本款与连裤袜的主力供应商，渠道覆盖全国的商超系统。</p>
         </div>
       </article>
     </div>
 
-    <p class="brand-foot mono-dim">▸ 品牌信息为科普性梳理（产地 / 创立 / 定位），或有出入，以品牌官方信息为准；与本项目无任何商业关联。</p>
+    <p class="brand-foot mono-dim" data-i18n="brands.foot">▸ 品牌信息为科普性梳理（产地 / 创立 / 定位），或有出入，以品牌官方信息为准；与本项目无任何商业关联。</p>
   </div>
 </section>
 
@@ -778,8 +779,8 @@
 <section class="gallery" id="gallery" hidden>
   <div class="section-inner">
     <div class="sec-head">
-      <p class="eyebrow">REAL SHOTS — 实拍参考</p>
-      <h2>纸面之外，真实的织物。</h2>
+      <p class="eyebrow" data-i18n="gallery.eyebrow">REAL SHOTS — 实拍参考</p>
+      <h2 data-i18n="gallery.title">纸面之外，真实的织物。</h2>
     </div>
     <div class="gallery-grid" id="galleryGrid"><!-- JS 填充 --></div>
     <p class="gallery-credit mono-dim" id="galleryCredit"></p>
@@ -790,32 +791,32 @@
 <section class="guide" id="guide">
   <div class="section-inner">
     <div class="sec-head">
-      <p class="eyebrow">FIELD GUIDE — 选购与洗护</p>
-      <h2>一张表，选对下一双。</h2>
+      <p class="eyebrow" data-i18n="guide.eyebrow">FIELD GUIDE — 选购与洗护</p>
+      <h2 data-i18n="guide.title">一张表，选对下一双。</h2>
     </div>
     <div class="guide-cols">
       <div class="guide-table-wrap">
         <table class="guide-table">
-          <thead><tr><th>场景</th><th>推荐 D 数</th><th>材质</th><th>说明</th></tr></thead>
+          <thead><tr><th data-i18n="guide.h1">场景</th><th data-i18n="guide.h2">推荐 D 数</th><th data-i18n="guide.h3">材质</th><th data-i18n="guide.h4">说明</th></tr></thead>
           <tbody>
-            <tr><td>盛夏通勤</td><td class="mono">5–15D</td><td>锦纶超薄</td><td>近乎裸感，防晒与修饰腿色</td></tr>
-            <tr><td>春秋日常</td><td class="mono">20–40D</td><td>锦纶 / 莫代尔</td><td>半透自然，耐穿度更好</td></tr>
-            <tr><td>深秋办公室</td><td class="mono">50–80D</td><td>天鹅绒</td><td>半哑光，裙装的过渡层</td></tr>
-            <tr><td>冬季出行</td><td class="mono">100–200D</td><td>天鹅绒 / 羊毛</td><td>全不透更显瘦，风度温度兼得</td></tr>
-            <tr><td>严寒雪天</td><td class="mono">200D+ / 加绒</td><td>天鹅绒加厚</td><td>保暖度接近一条薄秋裤</td></tr>
+            <tr><td data-i18n="guide.r1s">盛夏通勤</td><td class="mono" data-i18n="guide.r1d">5–15D</td><td data-i18n="guide.r1f">锦纶超薄</td><td data-i18n="guide.r1n">近乎裸感，防晒与修饰腿色</td></tr>
+            <tr><td data-i18n="guide.r2s">春秋日常</td><td class="mono" data-i18n="guide.r2d">20–40D</td><td data-i18n="guide.r2f">锦纶 / 莫代尔</td><td data-i18n="guide.r2n">半透自然，耐穿度更好</td></tr>
+            <tr><td data-i18n="guide.r3s">深秋办公室</td><td class="mono" data-i18n="guide.r3d">50–80D</td><td data-i18n="guide.r3f">天鹅绒</td><td data-i18n="guide.r3n">半哑光，裙装的过渡层</td></tr>
+            <tr><td data-i18n="guide.r4s">冬季出行</td><td class="mono" data-i18n="guide.r4d">100–200D</td><td data-i18n="guide.r4f">天鹅绒 / 羊毛</td><td data-i18n="guide.r4n">全不透更显瘦，风度温度兼得</td></tr>
+            <tr><td data-i18n="guide.r5s">严寒雪天</td><td class="mono" data-i18n="guide.r5d">200D+ / 加绒</td><td data-i18n="guide.r5f">天鹅绒加厚</td><td data-i18n="guide.r5n">保暖度接近一条薄秋裤</td></tr>
           </tbody>
         </table>
-        <p class="mono-dim">▸ 记不住数字？记住一句话：透明度与耐穿度此消彼长，按当天最在乎的那件事选。
+        <p class="mono-dim" data-i18n="guide.foot">▸ 记不住数字？记住一句话：透明度与耐穿度此消彼长，按当天最在乎的那件事选。
           顺带三个行话：抽丝叫 RUN，收腹裤头叫 CONTROL TOP，露趾袜头叫 SANDAL TOE。</p>
       </div>
       <div class="care">
-        <h3>洗护五则 <em>CARE</em></h3>
+        <h3 data-i18n="guide.care.title">洗护五则 <em>CARE</em></h3>
         <ol>
-          <li>30°C 以下冷水手洗，中性洗涤剂，忌暴晒与烘干。</li>
-          <li>洗后不拧绞——用毛巾压吸水分，平铺阴干。</li>
-          <li>穿戴前摘掉戒指、手表，修平指甲与指甲毛刺。</li>
-          <li>新袜先把标签小心剪除，避免拉出丝线。</li>
-          <li>小洞刚出现时，透明指甲油点涂可临时防止脱散。</li>
+          <li data-i18n="guide.care.1">30°C 以下冷水手洗，中性洗涤剂，忌暴晒与烘干。</li>
+          <li data-i18n="guide.care.2">洗后不拧绞——用毛巾压吸水分，平铺阴干。</li>
+          <li data-i18n="guide.care.3">穿戴前摘掉戒指、手表，修平指甲与指甲毛刺。</li>
+          <li data-i18n="guide.care.4">新袜先把标签小心剪除，避免拉出丝线。</li>
+          <li data-i18n="guide.care.5">小洞刚出现时，透明指甲油点涂可临时防止脱散。</li>
         </ol>
       </div>
     </div>
@@ -824,12 +825,13 @@
 
 <footer class="footer">
   <div class="section-inner footer-inner">
-    <p><span class="brand-mark">D</span> 丹尼实验室 DENIER ATELIER — 一个关于连裤袜的小型科普站。非商业项目。</p>
-    <p class="mono-dim">实拍图片来自 Wikimedia Commons · CC0 / CC BY 4.0 / CC BY-SA 3.0·4.0，作者署名见 <a href="assets/img/CREDITS.md">CREDITS.md</a> · 界面与插画为原创 SVG</p>
-    <a class="to-top" href="#top">回到顶部 ↑</a>
+    <p><span class="brand-mark">D</span> <span data-i18n="footer.p1">丹尼实验室 DENIER ATELIER — 一个关于连裤袜的小型科普站。非商业项目。</span></p>
+    <p class="mono-dim" data-i18n="footer.p2">实拍图片来自 Wikimedia Commons · CC0 / CC BY 4.0 / CC BY-SA 3.0·4.0，作者署名见 <a href="assets/img/CREDITS.md">CREDITS.md</a> · 界面与插画为原创 SVG</p>
+    <a class="to-top" href="#top" data-i18n="footer.top">回到顶部 ↑</a>
   </div>
 </footer>
 
+<script src="js/i18n.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

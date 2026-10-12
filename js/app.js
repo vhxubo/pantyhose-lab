@@ -1,6 +1,7 @@
 /* ═══════════════════════════════════════════
    丹尼实验室 — 交互核心
    D 数 → 透明度 / 光泽 / 针织密度 实时映射
+   i18n：中文为源文案，英文覆盖见 js/i18n.js
    ═══════════════════════════════════════════ */
 
 const MATERIALS = {
@@ -36,6 +37,62 @@ const CATS = [
 ];
 
 const state = { d: 40, mat: 'nylon', color: COLORS[0].hex, colorName: COLORS[0].name };
+
+/* ── i18n ── */
+let lang = 'zh';
+const zhStash = new WeakMap();      // [data-i18n] 的中文原文
+const zhStashAria = new WeakMap();  // [data-i18n-aria] 的中文原文
+const zhDoc = {};                   // title / meta description 原文
+
+const enHtml = () => (typeof I18N !== 'undefined' ? I18N.en.html : {});
+const enKey = (key) => enHtml()[key];
+/* 取词：中文取源对象，英文取覆盖词典，缺失时回退中文 */
+const L = (zh, en) => (lang === 'en' && en != null ? en : zh);
+const matText = (key, field) => L(MATERIALS[key][field], I18N?.en.mat[key]?.[field]);
+const catText = (cat, field) => L(cat[field], I18N?.en.cats[cat.label]?.[field]);
+const colorLabel = (name) => L(name, I18N?.en.colorNames[name]);
+
+function detectLang() {
+  const q = new URLSearchParams(location.search).get('lang');
+  if (q === 'en' || q === 'zh') return q;
+  let saved = null;
+  try { saved = localStorage.getItem('denier-lang'); } catch {}
+  if (saved === 'en' || saved === 'zh') return saved;
+  return (navigator.language || '').toLowerCase().startsWith('en') ? 'en' : 'zh';
+}
+
+function stashZh() {
+  zhDoc.title = document.title;
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta) zhDoc.desc = meta.getAttribute('content');
+  document.querySelectorAll('[data-i18n]').forEach((el) => zhStash.set(el, el.innerHTML));
+  document.querySelectorAll('[data-i18n-aria]').forEach((el) => zhStashAria.set(el, el.getAttribute('aria-label')));
+}
+
+function applyLang(l) {
+  lang = l;
+  try { localStorage.setItem('denier-lang', l); } catch {}
+  document.documentElement.lang = l === 'en' ? 'en' : 'zh-CN';
+  document.title = L(zhDoc.title, I18N?.en.doc.title);
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta) meta.setAttribute('content', L(zhDoc.desc, I18N?.en.doc.desc));
+
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
+    const v = L(zhStash.get(el), enKey(el.getAttribute('data-i18n')));
+    if (typeof v === 'string') el.innerHTML = v;
+  });
+  document.querySelectorAll('[data-i18n-aria]').forEach((el) => {
+    const v = L(zhStashAria.get(el), enKey(el.getAttribute('data-i18n-aria')));
+    if (typeof v === 'string') el.setAttribute('aria-label', v);
+  });
+
+  buildMatTabs();
+  buildSwatches();
+  buildDScale();
+  buildColorGrid();
+  buildGallery();
+  render();
+}
 
 /* ── 工具 ── */
 const $ = (s) => document.querySelector(s);
@@ -127,125 +184,135 @@ function render() {
   legSvg.style.setProperty('--toeA', (0.06 + a * 0.14).toFixed(3));
 
   dValue.textContent = state.d;
-  dCatEl.textContent = cat.label;
-  dHintEl.textContent = cat.hint;
-  specMat.textContent = mat.full;
-  specColor.textContent = state.colorName;
-  matNote.textContent = mat.note;
+  dCatEl.textContent = catText(cat, 'label');
+  dHintEl.textContent = catText(cat, 'hint');
+  specMat.textContent = matText(state.mat, 'full');
+  specColor.textContent = colorLabel(state.colorName);
+  matNote.textContent = matText(state.mat, 'note');
 
   dRange.value = state.d;
-  dRange.setAttribute('aria-valuetext', `${state.d}D ${cat.label}`);
+  dRange.setAttribute('aria-valuetext', `${state.d}D ${catText(cat, 'label')}`);
 
   drawKnit();
 }
 
-/* ── 材质标签 ── */
-Object.entries(MATERIALS).forEach(([key, m]) => {
-  const b = document.createElement('button');
-  b.className = 'mat-btn';
-  b.type = 'button';
-  b.textContent = m.label;
-  b.setAttribute('role', 'tab');
-  b.setAttribute('aria-selected', key === state.mat);
-  b.addEventListener('click', () => {
-    state.mat = key;
-    matTabs.querySelectorAll('.mat-btn').forEach((x) => x.setAttribute('aria-selected', x === b));
-    render();
+/* ── 材质标签（可重建） ── */
+const matBtnByKey = {};
+function buildMatTabs() {
+  matTabs.innerHTML = '';
+  Object.keys(matBtnByKey).forEach((k) => delete matBtnByKey[k]);
+  Object.entries(MATERIALS).forEach(([key, m]) => {
+    const b = document.createElement('button');
+    b.className = 'mat-btn';
+    b.type = 'button';
+    b.textContent = matText(key, 'label');
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-selected', key === state.mat);
+    b.addEventListener('click', () => {
+      state.mat = key;
+      matTabs.querySelectorAll('.mat-btn').forEach((x) => x.setAttribute('aria-selected', x === b));
+      render();
+    });
+    matBtnByKey[key] = b;
+    matTabs.appendChild(b);
   });
-  matTabs.appendChild(b);
-});
+}
 
-/* ── 光箱色卡 ── */
-COLORS.forEach((c) => {
-  const b = document.createElement('button');
-  b.className = 'sw-btn';
-  b.type = 'button';
-  b.style.background = c.hex;
-  b.title = c.name;
-  b.setAttribute('aria-label', `颜色：${c.name}`);
-  b.setAttribute('aria-pressed', c.hex === state.color);
-  b.addEventListener('click', () => {
-    state.color = c.hex; state.colorName = c.name;
-    swWrap.querySelectorAll('.sw-btn').forEach((x) => x.setAttribute('aria-pressed', x === b));
-    syncColorChips(c.hex);
-    render();
+/* ── 光箱色卡（可重建） ── */
+function buildSwatches() {
+  swWrap.innerHTML = '';
+  COLORS.forEach((c) => {
+    const b = document.createElement('button');
+    b.className = 'sw-btn';
+    b.type = 'button';
+    b.style.background = c.hex;
+    b.title = colorLabel(c.name);
+    b.setAttribute('aria-label', L(`颜色：${c.name}`, `Color: ${colorLabel(c.name)}`));
+    b.setAttribute('aria-pressed', c.hex === state.color);
+    b.addEventListener('click', () => {
+      state.color = c.hex; state.colorName = c.name;
+      swWrap.querySelectorAll('.sw-btn').forEach((x) => x.setAttribute('aria-pressed', x === b));
+      syncColorChips(c.hex);
+      render();
+    });
+    swWrap.appendChild(b);
   });
-  swWrap.appendChild(b);
-});
+}
 
-/* ── 丹尼尺色阶 ── */
+/* ── 丹尼尺色阶（可重建） ── */
 const SKIN_CSS = 'linear-gradient(165deg,#F6E7DB 0%,#E8C9AC 55%,#C99772 100%)';
-[5, 10, 20, 30, 40, 60, 80, 100, 120, 160, 200].forEach((d) => {
-  const chip = document.createElement('button');
-  chip.className = 'dchip';
-  chip.type = 'button';
-  chip.setAttribute('aria-label', `${d}D，载入光箱`);
-  const a = alphaFor(d, MATERIALS.nylon);
-  const dark = a > 0.42;                                   // 深色格子上标签换浅色
-  chip.innerHTML = `<span class="dchip-overlay"></span><span class="dchip-tag">${catFor(d).short}</span><span class="dchip-label">${d}D</span>`;
-  const lc = dark ? 'rgba(244,236,223,.92)' : '#2b2015';
-  chip.querySelector('.dchip-overlay').style.background = rgba('#17151A', a.toFixed(3));
-  chip.querySelector('.dchip-label').style.color = lc;
-  chip.querySelector('.dchip-tag').style.color = dark ? 'rgba(244,236,223,.65)' : 'rgba(43,32,21,.75)';
-  chip.addEventListener('click', () => {
-    state.d = d;
-    render();
-    $('#lab').scrollIntoView({ behavior: 'smooth' });
+function buildDScale() {
+  const track = $('#dscaleTrack');
+  track.innerHTML = '';
+  [5, 10, 20, 30, 40, 60, 80, 100, 120, 160, 200].forEach((d) => {
+    const chip = document.createElement('button');
+    chip.className = 'dchip';
+    chip.type = 'button';
+    chip.setAttribute('aria-label', L(`${d}D，载入光箱`, `${d}D — load into lightbox`));
+    const a = alphaFor(d, MATERIALS.nylon);
+    const dark = a > 0.42;                                   // 深色格子上标签换浅色
+    chip.innerHTML = `<span class="dchip-overlay"></span><span class="dchip-tag">${catText(catFor(d), 'short')}</span><span class="dchip-label">${d}D</span>`;
+    const lc = dark ? 'rgba(244,236,223,.92)' : '#2b2015';
+    chip.querySelector('.dchip-overlay').style.background = rgba('#17151A', a.toFixed(3));
+    chip.querySelector('.dchip-label').style.color = lc;
+    chip.querySelector('.dchip-tag').style.color = dark ? 'rgba(244,236,223,.65)' : 'rgba(43,32,21,.75)';
+    chip.addEventListener('click', () => {
+      state.d = d;
+      render();
+      $('#lab').scrollIntoView({ behavior: 'smooth' });
+    });
+    track.appendChild(chip);
   });
-  $('#dscaleTrack').appendChild(chip);
-});
+}
 
-/* ── 色彩区色卡（8D / 40D / 120D 三段试色） ── */
+/* ── 色彩区色卡（8D / 40D / 120D 三段试色，可重建） ── */
 const CHIP_D = [8, 40, 120];
-COLORS.forEach((c) => {
-  const card = document.createElement('button');
-  card.className = 'color-chip';
-  card.type = 'button';
-  card.setAttribute('aria-pressed', c.hex === state.color);
-  card.setAttribute('aria-label', `${c.name}，应用到光箱`);
-  card.innerHTML =
-    CHIP_D.map((d) =>
-      `<div class="cc-band" style="background:linear-gradient(${rgba(c.hex, alphaFor(d, MATERIALS.nylon).toFixed(3))},${rgba(c.hex, alphaFor(d, MATERIALS.nylon).toFixed(3))}),${SKIN_CSS}"><span>${d}D</span></div>`
-    ).join('') +
-    `<div class="cc-meta"><span class="cc-name">${c.name}</span><span class="cc-hex">${c.hex}</span></div>`;
-  card.addEventListener('click', () => {
-    state.color = c.hex; state.colorName = c.name;
-    swWrap.querySelectorAll('.sw-btn').forEach((x) =>
-      x.setAttribute('aria-pressed', x.getAttribute('aria-label') === `颜色：${c.name}`));
-    syncColorChips(c.hex);
-    render();
+function buildColorGrid() {
+  const grid = $('#colorGrid');
+  grid.innerHTML = '';
+  COLORS.forEach((c) => {
+    const card = document.createElement('button');
+    card.className = 'color-chip';
+    card.type = 'button';
+    card.setAttribute('aria-pressed', c.hex === state.color);
+    card.setAttribute('aria-label', L(`${c.name}，应用到光箱`, `${colorLabel(c.name)} — apply to lightbox`));
+    card.innerHTML =
+      CHIP_D.map((d) =>
+        `<div class="cc-band" style="background:linear-gradient(${rgba(c.hex, alphaFor(d, MATERIALS.nylon).toFixed(3))},${rgba(c.hex, alphaFor(d, MATERIALS.nylon).toFixed(3))}),${SKIN_CSS}"><span>${d}D</span></div>`
+      ).join('') +
+      `<div class="cc-meta"><span class="cc-name">${colorLabel(c.name)}</span><span class="cc-hex">${c.hex}</span></div>`;
+    card.addEventListener('click', () => {
+      state.color = c.hex; state.colorName = c.name;
+      swWrap.querySelectorAll('.sw-btn').forEach((x) =>
+        x.setAttribute('aria-pressed', x.getAttribute('aria-label') === L(`颜色：${c.name}`, `Color: ${colorLabel(c.name)}`)));
+      syncColorChips(c.hex);
+      render();
+    });
+    grid.appendChild(card);
   });
-  $('#colorGrid').appendChild(card);
-});
+}
 
 function syncColorChips(hex) {
   document.querySelectorAll('.color-chip').forEach((el) =>
     el.setAttribute('aria-pressed', el.querySelector('.cc-hex').textContent === hex));
 }
 
-/* ── 事件 ── */
-dRange.addEventListener('input', () => { state.d = +dRange.value; render(); });
-
-/* ── URL 深链：?d=120&mat=wool&color=%23EF E6DC 直达光箱状态 ── */
-(function applyParams() {
+/* ── URL 深链：?d=120&mat=wool&color=%23EF E6DC&lang=en 直达状态（仅改 state，不碰 DOM） ── */
+function applyParams() {
   const p = new URLSearchParams(location.search);
   const d = parseInt(p.get('d'), 10);
   if (d >= 5 && d <= 200) state.d = d;
   const m = p.get('mat');
-  if (MATERIALS[m]) {
-    state.mat = m;
-    matTabs.querySelectorAll('.mat-btn').forEach((b) =>
-      b.setAttribute('aria-selected', b.textContent === MATERIALS[m].label));
-  }
+  if (MATERIALS[m]) state.mat = m;
   const c = p.get('color');
   if (c && /^#?[0-9a-fA-F]{6}$/.test(c)) {
     const hex = c.startsWith('#') ? c.toUpperCase() : '#' + c.toUpperCase();
     const found = COLORS.find((x) => x.hex === hex);
     if (found) { state.color = found.hex; state.colorName = found.name; }
   }
-})();
+}
 
-/* ── 实拍图库（全部来自 Wikimedia Commons，署名见 assets/img/CREDITS.md） ── */
+/* ── 实拍图库（全部来自 Wikimedia Commons，署名见 assets/img/CREDITS.md；可重建） ── */
 const GALLERY = [
   { file: 'black-vs-nude-sheer.jpg', cap: '黑 vs 裸肤 · 超薄同款对比 · CC BY-SA 4.0' },
   { file: 'sheer-black-tights.jpg',  cap: '黑色超薄 · 正面产品图 · CC BY-SA 3.0' },
@@ -255,21 +322,30 @@ const GALLERY = [
   { file: 'hero-legs.jpg',           cap: '红色罗纹透肉袜 · 时尚大片 · CC BY-SA 3.0' },
   { file: 'hosiery-collection.jpg',  cap: '多色袜品 · CC BY-SA 3.0' },
 ];
-(function initGallery() {
+function buildGallery() {
   if (!GALLERY.length) return;
   $('#gallery').hidden = false;
   const grid = $('#galleryGrid');
-  GALLERY.forEach((g) => {
+  grid.innerHTML = '';
+  GALLERY.forEach((g, i) => {
+    const cap = L(g.cap, I18N?.en.gallery[i]);
     const fig = document.createElement('figure');
     const img = document.createElement('img');
     img.src = `assets/img/${g.file}`;
-    img.alt = g.cap;
+    img.alt = cap;
     img.loading = 'lazy';
-    const cap = document.createElement('figcaption');
-    cap.textContent = g.cap;
-    fig.append(img, cap);
+    const figcap = document.createElement('figcaption');
+    figcap.textContent = cap;
+    fig.append(img, figcap);
     grid.appendChild(fig);
   });
-})();
+}
 
-render();
+/* ── 事件 ── */
+dRange.addEventListener('input', () => { state.d = +dRange.value; render(); });
+$('#langToggle').addEventListener('click', () => applyLang(lang === 'en' ? 'zh' : 'en'));
+
+/* ── 启动：暂存中文原文 → 深链 → 按语言初始化并渲染 ── */
+stashZh();
+applyParams();
+applyLang(detectLang());

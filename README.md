@@ -1,6 +1,6 @@
 # 丹尼实验室 DENIER ATELIER
 
-一个关于连裤袜的小型科普网站：纤维材质图鉴、丹尼数（Denier, D）拖拽可视化、
+一个关于连裤袜的小型科普网站（中英双语）：纤维材质图鉴、丹尼数（Denier, D）拖拽可视化、
 款式形制图谱、知名品牌巡礼、色彩效果与选购指南。
 
 ## 运行
@@ -32,6 +32,8 @@ python3 -m http.server 8931
 - **实拍图库**：7 张 Wikimedia Commons 自由授权图片（CC0 / CC BY / CC BY-SA），署名见
   `assets/img/CREDITS.md`（CC BY-SA 系列若公开使用须保留署名）。
 - 响应式（桌面 / 移动端）、键盘可访问（原生 range 滑杆 + aria 标注）、尊重 `prefers-reduced-motion`。
+- **i18n**：导航右侧 中/EN 一键切换；中文为页面源文案（无 JS 兜底），英文覆盖见 `js/i18n.js`。
+  语言偏好存 `localStorage`，支持 `?lang=en` 深链；JS 生成的文案（材质注释、色名、分类提示、图库说明）随切换重建。
 
 ## 结构
 
@@ -39,7 +41,8 @@ python3 -m http.server 8931
 pantyhose-lab/
 ├── index.html          # 页面结构 + 腿模 / 平铺图 / 款式示意图 SVG
 ├── css/style.css       # 样本册 × 验布光箱双世界设计系统
-├── js/app.js           # D 数→透明度/光泽映射、材质修正、针织密度透镜（canvas）
+├── js/i18n.js          # 英文覆盖词典（中文为源文案）
+├── js/app.js           # D 数→透明度/光泽映射、材质修正、针织密度透镜（canvas）、i18n 切换
 └── assets/img/         # 实拍图片 + CREDITS.md 授权署名
 ```
 
