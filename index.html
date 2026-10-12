@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>丹尼实验室 · 连裤袜材质与 D 数图鉴</title>
+<meta name="description" content="一个关于连裤袜的小型科普站：纤维材质图鉴、5D–200D 丹尼拖拽可视化、色彩效果与选购指南。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231C1424'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-size='20' fill='%23C9A26B' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+SC:wght@500;600&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="#top">
+    <span class="brand-mark">D</span>
+    <span class="brand-name">丹尼实验室 <em>DENIER&nbsp;ATELIER</em></span>
+  </a>
+  <div class="nav-links">
+    <a href="#lab">光箱</a>
+    <a href="#materials">纤维材质</a>
+    <a href="#colors">色彩</a>
+    <a href="#guide">选购指南</a>
+  </div>
+</nav>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<header class="hero" id="top">
+  <div class="hero-copy">
+    <p class="eyebrow reveal r1">HOSIERY SPECIMEN CATALOG · 袜品样本册 · VOL.01</p>
+    <h1 class="reveal r2">透<span class="h-comma">，</span>与<span class="h-solid">不透</span>之间。</h1>
+    <p class="hero-lede reveal r3">一件连裤袜的第一属性，是它让多少光通过。
+      丹尼数（Denier, D）越低，纱线越细、织物越透；越高，越密、越实、越耐穿。</p>
+    <p class="hero-sub reveal r4">拖动丹尼仪，从 5D 到 200D 亲眼看区别；
+      再切换纤维与颜色——同一样东西，会呈现完全不同的样子。</p>
+    <div class="hero-cta reveal r5">
+      <a class="btn btn-gold" href="#lab">进入光箱 · 拖动看 D 数</a>
+      <a class="btn btn-ghost" href="#materials">先看纤维材质</a>
+    </div>
+  </div>
+
+  <figure class="hero-plinth reveal r3">
+    <svg class="flatlay" viewBox="0 0 360 470" role="img" aria-label="连裤袜平铺线稿图">
+      <defs>
+        <linearGradient id="fl-fill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#E3BFA4" stop-opacity=".22"/>
+          <stop offset=".55" stop-color="#E3BFA4" stop-opacity=".10"/>
+          <stop offset="1" stop-color="#E3BFA4" stop-opacity=".16"/>
+        </linearGradient>
+      </defs>
+      <!-- 连裤袜整体轮廓：腰 → 左腿 → 裆 → 右腿 → 腰 -->
+      <path class="fl-body" fill="url(#fl-fill)" stroke="#C9A26B" stroke-width="1.6" d="
+        M 111 64
+        C 92 100, 88 130, 102 156
+        C 96 216, 102 268, 114 314
+        C 122 348, 130 372, 133 394
+        C 137 416, 134 440, 120 448
+        C 108 454, 96 448, 97 434
+        C 98 420, 108 406, 118 398
+        C 130 360, 142 300, 152 250
+        C 160 220, 168 205, 180 200
+        C 192 205, 200 220, 208 250
+        C 218 300, 230 360, 242 398
+        C 252 406, 262 420, 263 434
+        C 264 448, 252 454, 240 448
+        C 226 440, 223 416, 227 394
+        C 230 372, 238 348, 246 314
+        C 258 268, 264 216, 258 156
+        C 272 130, 268 100, 249 64
+        Q 180 88 111 64 Z"/>
+      <!-- 腰头 -->
+      <path fill="rgba(201,162,107,.28)" stroke="#C9A26B" stroke-width="1.6" d="M 106 40 Q 180 14 254 40 L 249 64 Q 180 42 111 64 Z"/>
+      <!-- 前中缝与裆部加固 -->
+      <path class="fl-seam" d="M 180 46 L 180 196"/>
+      <path class="fl-seam" d="M 166 206 Q 180 220 194 206"/>
+      <!-- 内缝线 -->
+      <path class="fl-seam" d="M 158 244 C 148 292, 138 344, 126 392"/>
+      <path class="fl-seam" d="M 202 244 C 212 292, 222 344, 234 392"/>
+      <!-- 脚尖加固 -->
+      <path class="fl-seam" d="M 104 428 Q 112 442 124 442"/>
+      <path class="fl-seam" d="M 256 428 Q 248 442 236 442"/>
+    </svg>
+    <figcaption class="plinth-cap">FIG.01 — 连裤袜 · 平铺样本 · 70D 天鹅绒 · 经典黑</figcaption>
+  </figure>
+</header>
+
+<!-- ═══════════════ D 尺 ═══════════════ -->
+<section class="dscale" aria-label="丹尼数色阶尺">
+  <div class="section-inner">
+    <div class="dscale-head">
+      <p class="eyebrow">THE SCALE — 一把丹尼尺</p>
+      <p class="dscale-note">同一双黑袜，在验布灯下的全部变化。<span class="mono-dim">点击任一格 → 载入光箱</span></p>
+    </div>
+    <div class="dscale-track" id="dscaleTrack"><!-- JS 生成 --></div>
+  </div>
+</section>
+
+<!-- ═══════════════ 光箱实验室（签名交互） ═══════════════ -->
+<section class="lab" id="lab">
+  <div class="section-inner">
+    <div class="lab-head">
+      <p class="eyebrow eyebrow-dark">INSPECTION LIGHTBOX — 验布光箱</p>
+      <h2>拖动丹尼仪，<br>亲眼看 5D 到 200D 的区别。</h2>
+      <p class="lab-lede">丹尼是纤维计量单位：每 9,000 米长的纱线重 1 克即为 1D。
+        数字越小越透，越大越实。切换材质与颜色，同一 D 数也会呈现不同观感。
+        <span class="mono-dim" style="color:rgba(239,231,218,.45)">＊腰臀部位通常单独加厚织造，与腿部 D 数无关。</span></p>
+    </div>
+
+    <div class="lightbox">
+      <div class="lab-side">
+        <div class="readout" aria-live="polite">
+          <span class="readout-num" id="dValue">40</span><span class="readout-unit">D</span>
+        </div>
+        <p class="readout-cat" id="dCategory">半透自然</p>
+        <p class="readout-hint" id="dHint"></p>
+        <dl class="readout-spec">
+          <div><dt>材质</dt><dd id="specMat">锦纶 / 尼龙</dd></div>
+          <div><dt>颜色</dt><dd id="specColor">经典黑</dd></div>
+        </dl>
+      </div>
+
+      <div class="lab-stage">
+        <!-- 腿模 SVG -->
+        <svg id="legSvg" viewBox="0 0 360 870" preserveAspectRatio="xMidYMax meet" role="img" aria-label="连裤袜穿着效果示意">
+          <defs>
+            <radialGradient id="skinGrad" cx="36%" cy="24%" r="98%">
+              <stop offset="0" stop-color="#F8ECDF"/>
+              <stop offset=".45" stop-color="#EBC9AC"/>
+              <stop offset=".78" stop-color="#D8A984"/>
+              <stop offset="1" stop-color="#A97B58"/>
+            </radialGradient>
+            <linearGradient id="glossGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FFFFFF" stop-opacity=".75"/>
+              <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+            </linearGradient>
+            <radialGradient id="spotGrad" cx="50%" cy="42%" r="60%">
+              <stop offset="0" stop-color="#A87F42" stop-opacity=".20"/>
+              <stop offset="1" stop-color="#A87F42" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="7"/></filter>
+            <filter id="soft2" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4"/></filter>
+            <!-- 左腿：大腿丰润 → 膝 → 小腿肚 → 收窄脚踝 → 绷脚尖 -->
+            <path id="legL" d="M 44.5 8 C 46.1 23.3, 50.7 68.0, 54.2 100 C 57.8 132.0, 61.5 166.7, 65.8 200 C 70.1 233.3, 76.3 275.8, 80.0 300 C 83.7 324.2, 86.2 325.0, 87.8 345 C 89.4 365.0, 87.6 394.2, 89.8 420 C 92.0 445.8, 96.8 475.0, 101.0 500 C 105.2 525.0, 109.8 545.3, 115.2 570 C 120.6 594.7, 129.4 626.3, 133.4 648 C 137.4 669.7, 137.1 681.3, 139.3 700 C 141.5 718.7, 144.7 743.3, 146.8 760 C 148.9 776.7, 149.8 784.7, 152.0 800 C 154.2 815.3, 158.1 843.3, 159.7 852 C 161.3 860.7, 160.9 860.7, 161.3 852 C 161.7 843.3, 161.9 815.3, 162.0 800 C 162.1 784.7, 161.9 776.7, 161.8 760 C 161.7 743.3, 161.5 718.7, 161.3 700 C 161.1 681.3, 159.3 669.7, 160.4 648 C 161.6 626.3, 166.1 594.7, 168.2 570 C 170.3 545.3, 172.1 525.0, 173.0 500 C 173.9 475.0, 175.0 445.8, 173.8 420 C 172.6 394.2, 166.9 365.0, 165.8 345 C 164.7 325.0, 166.7 324.2, 167.0 300 C 167.3 275.8, 167.9 233.3, 167.8 200 C 167.7 166.7, 167.1 132.0, 166.2 100 C 165.3 68.0, 163.1 23.3, 162.5 8 Z"/>
+            <path id="legR" d="M 315.5 8 C 313.9 23.3, 309.4 68.0, 305.8 100 C 302.3 132.0, 298.5 166.7, 294.2 200 C 289.9 233.3, 283.7 275.8, 280.0 300 C 276.3 324.2, 273.8 325.0, 272.2 345 C 270.6 365.0, 272.4 394.2, 270.2 420 C 268.0 445.8, 263.2 475.0, 259.0 500 C 254.8 525.0, 250.2 545.3, 244.8 570 C 239.4 594.7, 230.6 626.3, 226.6 648 C 222.6 669.7, 222.9 681.3, 220.7 700 C 218.5 718.7, 215.3 743.3, 213.2 760 C 211.1 776.7, 210.2 784.7, 208.0 800 C 205.8 815.3, 201.9 843.3, 200.3 852 C 198.8 860.7, 199.1 860.7, 198.7 852 C 198.3 843.3, 198.1 815.3, 198.0 800 C 197.9 784.7, 198.1 776.7, 198.2 760 C 198.3 743.3, 198.5 718.7, 198.7 700 C 198.9 681.3, 200.8 669.7, 199.6 648 C 198.4 626.3, 193.9 594.7, 191.8 570 C 189.7 545.3, 187.9 525.0, 187.0 500 C 186.1 475.0, 185.0 445.8, 186.2 420 C 187.4 394.2, 193.1 365.0, 194.2 345 C 195.3 325.0, 193.3 324.2, 193.0 300 C 192.7 275.8, 192.1 233.3, 192.2 200 C 192.3 166.7, 192.9 132.0, 193.8 100 C 194.7 68.0, 196.9 23.3, 197.5 8 Z"/>
+            <clipPath id="clipL"><use href="#legL"/></clipPath>
+            <clipPath id="clipR"><use href="#legR"/></clipPath>
+          </defs>
+
+          <ellipse cx="180" cy="430" rx="175" ry="390" fill="url(#spotGrad)"/>
+          <ellipse cx="180" cy="850" rx="100" ry="9" fill="#000" opacity=".5" filter="url(#soft2)"/>
+
+          <g id="stockGroup">
+            <!-- 左腿：皮肤与袜层同组，保证 multiply 混合生效 -->
+            <g>
+              <g clip-path="url(#clipL)">
+                <use href="#legL" fill="url(#skinGrad)"/>
+                <ellipse cx="127" cy="345" rx="16" ry="36" fill="#FFF" opacity=".14" filter="url(#soft)"/>
+                <use href="#legL" class="stock-fill"/>
+                <path class="stock-gloss" d="M 96 425 C 98 465, 104 510, 115 555 L 122 551 C 111 508, 104 462, 102 427 Z" fill="url(#glossGrad)"/>
+                <circle class="stock-toe" cx="162" cy="812" r="38" fill="#000"/>
+              </g>
+              <use href="#legL" fill="none" stroke="rgba(60,38,28,.28)" stroke-width="1"/>
+            </g>
+            <!-- 右腿 -->
+            <g>
+              <g clip-path="url(#clipR)">
+                <use href="#legR" fill="url(#skinGrad)"/>
+                <ellipse cx="233" cy="345" rx="16" ry="36" fill="#FFF" opacity=".14" filter="url(#soft)"/>
+                <use href="#legR" class="stock-fill"/>
+                <path class="stock-gloss" d="M 264 425 C 262 465, 256 510, 245 555 L 238 551 C 249 508, 256 462, 258 427 Z" fill="url(#glossGrad)"/>
+                <circle class="stock-toe" cx="198" cy="812" r="38" fill="#000"/>
+              </g>
+              <use href="#legR" fill="none" stroke="rgba(60,38,28,.28)" stroke-width="1"/>
+            </g>
+          </g>
+        </svg>
+
+        <!-- 针织密度透镜 -->
+        <div class="lens">
+          <canvas id="knitCanvas" width="312" height="312" aria-hidden="true"></canvas>
+        </div>
+        <span class="lens-cap">KNIT ×40 · 组织密度</span>
+      </div>
+
+      <div class="lab-controls">
+        <div class="ctrl-block">
+          <h3 class="ctrl-title">材质 <em>FIBER</em></h3>
+          <div class="mats" id="matTabs" role="tablist" aria-label="材质"><!-- JS 生成 --></div>
+          <p class="ctrl-note" id="matNote"></p>
+        </div>
+        <div class="ctrl-block">
+          <h3 class="ctrl-title">颜色 <em>COLOR</em></h3>
+          <div class="swatches" id="swatches"><!-- JS 生成 --></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 丹尼拖拽仪 -->
+    <div class="gauge">
+      <div class="gauge-scale" aria-hidden="true"></div>
+      <input type="range" id="dRange" min="5" max="200" step="1" value="40"
+             aria-label="丹尼数 D" aria-valuemin="5" aria-valuemax="200">
+      <div class="gauge-ticks mono-dim">
+        <span>5</span><span>20</span><span>40</span><span>70</span><span>120</span><span>200</span>
+      </div>
+    </div>
+    <p class="lab-foot mono-dim">▸ 光箱原理：与面料检验车间相同——只有在暗箱灯下，才能准确判断织物的透光程度。</p>
+  </div>
+</section>
+
+<!-- ═══════════════ 纤维材质 ═══════════════ -->
+<section class="materials" id="materials">
+  <div class="section-inner">
+    <div class="sec-head">
+      <p class="eyebrow">FIBERS — 纤维材质</p>
+      <h2>六种纤维，六种性格。</h2>
+      <p class="sec-lede">D 数相同的袜子，换一种纤维，光泽、手感与厚度都会不同——
+        这正是光箱里可以切换材质的原因。</p>
+    </div>
+    <div class="mat-grid">
+      <article class="mat-card">
+        <div class="swatch sw-nylon"><span class="sw-index">SW-01</span></div>
+        <h3>锦纶 / 尼龙 <em>Nylon</em></h3>
+        <p class="mat-spec">缎面光泽 · 四季 · 5D–70D</p>
+        <p>连裤袜的骨架。纤维细可至个位数丹尼，织出的袜子轻薄耐磨、带缎面光泽，
+          是"透明感"的主要来源，常见于春夏薄款。</p>
+      </article>
+      <article class="mat-card">
+        <div class="swatch sw-spandex"><span class="sw-index">SW-02</span></div>
+        <h3>氨纶 / 莱卡 <em>Spandex</em></h3>
+        <p class="mat-spec">高弹贴身 · 全季 · 混纺 10%–30%</p>
+        <p>弹力的来源。让袜子贴合腿型、久穿不松垮。几乎不存在 100% 氨纶的袜子——
+          它总是与锦纶搭档混纺，比例越高回弹越好。</p>
+      </article>
+      <article class="mat-card">
+        <div class="swatch sw-velvet"><span class="sw-index">SW-03</span></div>
+        <h3>天鹅绒 <em>Velvet</em></h3>
+        <p class="mat-spec">哑光绒面 · 秋冬 · 80D–400D</p>
+        <p>加厚季节的主力。绒感织法让表面呈雾面哑光，视觉上更收敛显瘦，
+          触感温润厚实，是秋冬连裤袜最常见的选择。</p>
+      </article>
+      <article class="mat-card">
+        <div class="swatch sw-cotton"><span class="sw-index">SW-04</span></div>
+        <h3>棉 <em>Cotton</em></h3>
+        <p class="mat-spec">透气亲肤 · 春秋 · 40D–110D</p>
+        <p>哑光质感、吸湿透气，风格偏休闲日系。缺点是弹性有限、易松弛，
+          通常与氨纶混纺改善版型，适合不喜欢"反光感"的人。</p>
+      </article>
+      <article class="mat-card">
+        <div class="swatch sw-wool"><span class="sw-index">SW-05</span></div>
+        <h3>羊毛 <em>Wool</em></h3>
+        <p class="mat-spec">蓬松保暖 · 严冬 · 100D 以上</p>
+        <p>保暖担当。羊毛纤维天然卷曲，能锁住一层静止空气，同等丹尼下比尼龙更厚更暖，
+          是冬季裙装的安全搭档，常与锦纶混纺增强耐用度。</p>
+      </article>
+      <article class="mat-card">
+        <div class="swatch sw-modal"><span class="sw-index">SW-06</span></div>
+        <h3>莫代尔 <em>Modal</em></h3>
+        <p class="mat-spec">垂坠丝滑 · 春秋 · 20D–60D</p>
+        <p>木源再生纤维，光泽介于缎面与哑光之间，垂坠感好、吸湿性强，
+          适合追求"素肌感"的春秋薄款，亲肤度接近真丝。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ 色彩 ═══════════════ -->
+<section class="colors" id="colors">
+  <div class="section-inner">
+    <div class="sec-head">
+      <p class="eyebrow">COLORWAYS — 色彩</p>
+      <h2>同一双袜子，换一种光。</h2>
+      <p class="sec-lede">颜色与 D 数是相乘的关系：同一种色，8D 时若有似无，120D 时才完全显色。
+        点击下方色卡，即可在光箱中试穿。</p>
+    </div>
+    <div class="color-grid" id="colorGrid"><!-- JS 生成 --></div>
+    <div class="color-notes">
+      <div class="color-note"><h3>黑</h3><p>最百搭也最显瘦。D 数越高，黑色的"力量感"越强——8D 黑是雾，120D 黑是墨。</p></div>
+      <div class="color-note"><h3>裸肤</h3><p>第二层皮肤。按腿色选深浅，5D 裸肤近乎隐形，是面试与正式场合的安全牌。</p></div>
+      <div class="color-note"><h3>灰 · 咖啡</h3><p>柔和的过渡色，适合大地色系穿搭，比黑温柔，比裸肤更有存在感。</p></div>
+      <div class="color-note"><h3>藏青 · 酒红</h3><p>整身深色穿搭里的呼吸点，低饱和彩色袜是进阶玩家的常用巧思。</p></div>
+      <div class="color-note"><h3>奶油白</h3><p>清爽但挑搭配、易显脏，常见于洛丽塔与制服穿搭，通勤场合需谨慎。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ 实拍参考（图片来自 Wikimedia Commons） ═══════════════ -->
+<section class="gallery" id="gallery" hidden>
+  <div class="section-inner">
+    <div class="sec-head">
+      <p class="eyebrow">REAL SHOTS — 实拍参考</p>
+      <h2>纸面之外，真实的织物。</h2>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"><!-- JS 填充 --></div>
+    <p class="gallery-credit mono-dim" id="galleryCredit"></p>
+  </div>
+</section>
+
+<!-- ═══════════════ 选购指南 ═══════════════ -->
+<section class="guide" id="guide">
+  <div class="section-inner">
+    <div class="sec-head">
+      <p class="eyebrow">FIELD GUIDE — 选购与洗护</p>
+      <h2>一张表，选对下一双。</h2>
+    </div>
+    <div class="guide-cols">
+      <div class="guide-table-wrap">
+        <table class="guide-table">
+          <thead><tr><th>场景</th><th>推荐 D 数</th><th>材质</th><th>说明</th></tr></thead>
+          <tbody>
+            <tr><td>盛夏通勤</td><td class="mono">5–15D</td><td>锦纶超薄</td><td>近乎裸感，防晒与修饰腿色</td></tr>
+            <tr><td>春秋日常</td><td class="mono">20–40D</td><td>锦纶 / 莫代尔</td><td>半透自然，耐穿度更好</td></tr>
+            <tr><td>深秋办公室</td><td class="mono">50–80D</td><td>天鹅绒</td><td>半哑光，裙装的过渡层</td></tr>
+            <tr><td>冬季出行</td><td class="mono">100–200D</td><td>天鹅绒 / 羊毛</td><td>全不透更显瘦，风度温度兼得</td></tr>
+            <tr><td>严寒雪天</td><td class="mono">200D+ / 加绒</td><td>天鹅绒加厚</td><td>保暖度接近一条薄秋裤</td></tr>
+          </tbody>
+        </table>
+        <p class="mono-dim">▸ 记不住数字？记住一句话：透明度与耐穿度此消彼长，按当天最在乎的那件事选。
+          顺带三个行话：抽丝叫 RUN，收腹裤头叫 CONTROL TOP，露趾袜头叫 SANDAL TOE。</p>
+      </div>
+      <div class="care">
+        <h3>洗护五则 <em>CARE</em></h3>
+        <ol>
+          <li>30°C 以下冷水手洗，中性洗涤剂，忌暴晒与烘干。</li>
+          <li>洗后不拧绞——用毛巾压吸水分，平铺阴干。</li>
+          <li>穿戴前摘掉戒指、手表，修平指甲与指甲毛刺。</li>
+          <li>新袜先把标签小心剪除，避免拉出丝线。</li>
+          <li>小洞刚出现时，透明指甲油点涂可临时防止脱散。</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="section-inner footer-inner">
+    <p><span class="brand-mark">D</span> 丹尼实验室 DENIER ATELIER — 一个关于连裤袜的小型科普站。非商业项目。</p>
+    <p class="mono-dim">实拍图片来自 Wikimedia Commons · CC0 / CC BY 4.0 / CC BY-SA 3.0·4.0，作者署名见 <a href="assets/img/CREDITS.md">CREDITS.md</a> · 界面与插画为原创 SVG</p>
+    <a class="to-top" href="#top">回到顶部 ↑</a>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
