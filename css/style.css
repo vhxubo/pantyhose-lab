@@ -453,6 +453,68 @@ h2 { font-size: clamp(26px, 3.6vw, 40px); }
 .to-top { text-decoration: none; font-family: var(--font-mono); font-size: 12px; }
 .footer .mono-dim { color: rgba(239, 231, 218, .45); }
 
+/* ─────────── 款式形制 ─────────── */
+.style-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: clamp(18px, 2.6vw, 30px);
+}
+.style-card {
+  border: 1px solid var(--hairline); border-radius: 8px;
+  padding: 16px 16px 22px; background: rgba(255, 255, 255, .35);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.style-card:hover { transform: translateY(-4px); box-shadow: 0 20px 34px -22px rgba(39, 33, 48, .4); }
+.style-swatch {
+  background: radial-gradient(120% 90% at 50% 8%, var(--night-2) 0%, var(--night) 58%, #140e1b 100%);
+  border: 1px solid rgba(201, 162, 107, .3);
+  border-radius: 6px;
+  padding: clamp(12px, 1.6vw, 18px) 10px 10px;
+}
+.style-fig {
+  width: min(72%, 170px); margin: 0 auto; display: block;
+  filter: drop-shadow(0 10px 14px rgba(0, 0, 0, .4));
+}
+.style-card h3 { font-size: 17px; margin-top: 16px; font-weight: 600; }
+.style-card h3 em { font-style: normal; font-family: var(--font-mono); font-size: 10.5px; color: var(--ink-soft); margin-left: 6px; letter-spacing: .08em; }
+.style-card .mat-spec { margin: 6px 0 10px; }
+.style-card > p:last-child { font-size: 13.5px; color: var(--ink-soft); }
+
+/* ─────────── 品牌馆 ─────────── */
+.brands { background: var(--paper-2); }
+.region-head {
+  display: flex; align-items: baseline; gap: 10px;
+  font-family: var(--font-display); font-size: 22px;
+  margin: clamp(40px, 5vw, 56px) 0 18px;
+}
+.region-head:first-of-type { margin-top: 0; }
+.region-head em { font-family: var(--font-mono); font-style: normal; font-size: 11px; letter-spacing: .22em; color: var(--wine); }
+.region-head::after { content: ""; flex: 1; height: 1px; background: var(--hairline); align-self: center; }
+.brand-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+}
+.brand-card {
+  display: flex; gap: 14px; align-items: flex-start;
+  border: 1px solid var(--hairline); border-radius: 8px;
+  background: rgba(255, 255, 255, .45);
+  padding: 16px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.brand-card:hover { transform: translateY(-3px); box-shadow: 0 18px 30px -20px rgba(39, 33, 48, .45); }
+.brand-tile {
+  flex: none; display: grid; place-items: center;
+  width: 52px; height: 52px; border-radius: 8px;
+  background: radial-gradient(120% 90% at 50% 8%, var(--night-2) 0%, var(--night) 70%);
+  color: var(--gold-hi);
+  font-family: var(--font-display); font-size: 24px; line-height: 1;
+  box-shadow: inset 0 0 0 1px rgba(201, 162, 107, .3);
+}
+.brand-card h3 { font-size: 16px; font-weight: 600; line-height: 1.45; }
+.brand-card h3 em { font-style: normal; font-family: var(--font-mono); font-size: 10.5px; color: var(--ink-soft); margin-left: 6px; letter-spacing: .06em; }
+.brand-spec { font-family: var(--font-mono); font-size: 11.5px; color: var(--wine); letter-spacing: .05em; margin: 3px 0 6px; }
+.brand-desc { font-size: 13px; color: var(--ink-soft); }
+.brand-foot { margin-top: 28px; }
+
 /* ─────────── 入场动画 ─────────── */
 @media (prefers-reduced-motion: no-preference) {
   .reveal { opacity: 0; transform: translateY(16px); animation: rise .8s cubic-bezier(.2, .7, .2, 1) forwards; }
@@ -474,6 +536,7 @@ h2 { font-size: clamp(26px, 3.6vw, 40px); }
   .lab-controls { flex-direction: row; flex-wrap: wrap; }
   .lab-controls .ctrl-block { flex: 1 1 260px; }
   .mat-grid { grid-template-columns: repeat(2, 1fr); }
+  .style-grid { grid-template-columns: repeat(2, 1fr); }
   .color-notes { grid-template-columns: repeat(3, 1fr); }
   .guide-cols { grid-template-columns: 1fr; }
 }
@@ -486,6 +549,8 @@ h2 { font-size: clamp(26px, 3.6vw, 40px); }
   #legSvg { height: min(78vw, 440px); }
   .lens { width: 116px; height: 116px; right: -6px; }
   .mat-grid { grid-template-columns: 1fr; }
+  .style-grid { grid-template-columns: 1fr; }
+  .brand-grid { grid-template-columns: 1fr; }
   .color-notes { grid-template-columns: 1fr 1fr; }
   .readout-num { font-size: 48px; }
   .readout-hint { min-height: 0; }

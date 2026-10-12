@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>丹尼实验室 · 连裤袜材质与 D 数图鉴</title>
-<meta name="description" content="一个关于连裤袜的小型科普站：纤维材质图鉴、5D–200D 丹尼拖拽可视化、色彩效果与选购指南。">
+<title>丹尼实验室 · 连裤袜材质、款式与品牌图鉴</title>
+<meta name="description" content="一个关于连裤袜的小型科普站：纤维材质图鉴、5D–200D 丹尼拖拽可视化、款式形制图谱、知名品牌巡礼与选购指南。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231C1424'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-size='20' fill='%23C9A26B' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,9 +22,73 @@
     <a href="#lab">光箱</a>
     <a href="#materials">纤维材质</a>
     <a href="#colors">色彩</a>
+    <a href="#styles">款式</a>
+    <a href="#brands">品牌</a>
     <a href="#guide">选购指南</a>
   </div>
 </nav>
+
+<!-- 共享图鉴资源：平铺轮廓 + 织纹 pattern，供款式图鉴的示意图复用 -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <path id="flatBody" d="
+      M 111 64
+      C 92 100, 88 130, 102 156
+      C 96 216, 102 268, 114 314
+      C 122 348, 130 372, 133 394
+      C 137 416, 134 440, 120 448
+      C 108 454, 96 448, 97 434
+      C 98 420, 108 406, 118 398
+      C 130 360, 142 300, 152 250
+      C 160 220, 168 205, 180 200
+      C 192 205, 200 220, 208 250
+      C 218 300, 230 360, 242 398
+      C 252 406, 262 420, 263 434
+      C 264 448, 252 454, 240 448
+      C 226 440, 223 416, 227 394
+      C 230 372, 238 348, 246 314
+      C 258 268, 264 216, 258 156
+      C 272 130, 268 100, 249 64
+      Q 180 88 111 64 Z"/>
+    <path id="flatWaist" d="M 106 40 Q 180 14 254 40 L 249 64 Q 180 42 111 64 Z"/>
+    <clipPath id="clipBody"><use href="#flatBody"/></clipPath>
+    <radialGradient id="skinFlat" cx="40%" cy="18%" r="115%">
+      <stop offset="0" stop-color="#F6E7DB"/>
+      <stop offset=".55" stop-color="#E8C9AC"/>
+      <stop offset="1" stop-color="#C99772"/>
+    </radialGradient>
+    <linearGradient id="gradComp" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#232B45" stop-opacity=".20"/>
+      <stop offset=".55" stop-color="#232B45" stop-opacity=".48"/>
+      <stop offset="1" stop-color="#232B45" stop-opacity=".88"/>
+    </linearGradient>
+    <pattern id="ptNet" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M0 10 L10 0 L20 10 L10 20 Z" fill="none" stroke="rgba(30,24,40,.9)" stroke-width="2"/>
+    </pattern>
+    <pattern id="ptRib" width="18" height="18" patternUnits="userSpaceOnUse">
+      <rect width="9" height="18" fill="rgba(233,224,211,.20)"/>
+    </pattern>
+    <pattern id="ptLace" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="5.5" cy="5.5" r="2.1" fill="rgba(233,224,211,.55)"/>
+      <circle cx="16.5" cy="16.5" r="2.1" fill="rgba(233,224,211,.55)"/>
+      <path d="M0 22 L22 0" stroke="rgba(233,224,211,.18)" stroke-width="1" fill="none"/>
+    </pattern>
+    <pattern id="ptArgyle" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M0 17 L17 0 L34 17 L17 34 Z" fill="rgba(201,162,107,.30)"/>
+      <path d="M0 17 L17 0 L17 34 Z" fill="rgba(233,224,211,.10)"/>
+      <circle cx="17" cy="17" r="1.8" fill="rgba(233,224,211,.85)"/>
+    </pattern>
+    <pattern id="ptFine" width="7" height="7" patternUnits="userSpaceOnUse">
+      <path d="M0 0 H7 M0 0 V7" stroke="rgba(233,224,211,.28)" stroke-width="1" fill="none"/>
+    </pattern>
+    <pattern id="ptFuzz" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="4" r="1.1" fill="rgba(255,255,255,.55)"/>
+      <circle cx="11" cy="9" r="1.1" fill="rgba(255,255,255,.4)"/>
+      <circle cx="6" cy="13" r="1" fill="rgba(120,80,55,.4)"/>
+      <circle cx="14" cy="2" r=".9" fill="rgba(120,80,55,.35)"/>
+    </pattern>
+  </defs>
+</svg>
 
 <!-- ═══════════════ HERO ═══════════════ -->
 <header class="hero" id="top">
@@ -283,6 +347,430 @@
       <div class="color-note"><h3>藏青 · 酒红</h3><p>整身深色穿搭里的呼吸点，低饱和彩色袜是进阶玩家的常用巧思。</p></div>
       <div class="color-note"><h3>奶油白</h3><p>清爽但挑搭配、易显脏，常见于洛丽塔与制服穿搭，通勤场合需谨慎。</p></div>
     </div>
+  </div>
+</section>
+
+<!-- ═══════════════ 款式形制 ═══════════════ -->
+<section class="styles" id="styles">
+  <div class="section-inner">
+    <div class="sec-head">
+      <p class="eyebrow">CUTS &amp; KNITS — 款式形制</p>
+      <h2>十四种形制，一张图谱。</h2>
+      <p class="sec-lede">D 数之外，款式决定"哪里厚、哪里空、怎么织"。
+        从基础形制到织法花样，每张示意图都对应同一双平铺样本——金色虚线标出的就是该款的独有特征。</p>
+    </div>
+    <div class="style-grid">
+
+      <article class="style-card">
+        <div class="style-swatch">
+          <svg class="style-fig" viewBox="0 0 360 470" role="img" aria-label="经典薄透款平铺示意：通体均匀薄透">
+            <g clip-path="url(#clipBody)">
+              <use href="#flatBody" fill="url(#skinFlat)"/>
+              <use href="#flatBody" fill="rgba(23,21,26,.42)"/>
+            </g>
+            <use href="#flatBody" fill="none" stroke="rgba(201,162,107,.8)" stroke-width="2.2"/>
+            <use href="#flatWaist" fill="rgba(201,162,107,.25)" stroke="rgba(201,162,107,.8)" stroke-width="1.6"/>
+          </svg>
+        </div>
+        <h3>经典薄透 <em>CLASSIC</em></h3>
+        <p class="mat-spec">基础形制 · 全季 · 5D–200D</p>
+        <p>一体织造的原点：裤头、裤身与两腿连续成形，没有附加结构。
+          一切差别都交给 D 数与纤维——光箱里调的就是它。</p>
+      </article>
+
+      <article class="style-card">
+        <div class="style-swatch">
+          <svg class="style-fig" viewBox="0 0 360 470" role="img" aria-label="T裆无缝款平铺示意：裆部 T 形织缝，无前中缝">
+            <g clip-path="url(#clipBody)">
+              <use href="#flatBody" fill="url(#skinFlat)"/>
+              <use href="#flatBody" fill="rgba(23,21,26,.42)"/>
+              <path d="M180 70 L180 194 M180 194 C171 188 162 178 154 166 M180 194 C189 188 198 178 206 166"
+                    fill="none" stroke="#C9A26B" stroke-width="2.6" stroke-dasharray="5 4"/>
+            </g>
+            <use href="#flatBody" fill="none" stroke="rgba(201,162,107,.8)" stroke-width="2.2"/>
+            <use href="#flatWaist" fill="rgba(201,162,107,.25)" stroke="rgba(201,162,107,.8)" stroke-width="1.6"/>
+          </svg>
+        </div>
+        <h3>T裆无缝 <em>T-GUSSET</em></h3>
+        <p class="mat-spec">无前中缝 · 贴身不移位 · 紧身下装友好</p>
+        <p>裆部以 T 形织缝取代贯穿正面的中缝：贴身更服帖，
+          浅色裤装、紧身裙前不再有一道"线"。基础款之上的第一道分水岭。</p>
+      </article>
+
+      <article class="style-card">
+        <div class="style-swatch">
+          <svg class="style-fig" viewBox="0 0 360 470" role="img" aria-label="棉裆加固款平铺示意：裆部缝入棉质衬裆">
+            <g clip-path="url(#clipBody)">
+              <use href="#flatBody" fill="url(#skinFlat)"/>
+              <use href="#flatBody" fill="rgba(23,21,26,.42)"/>
+              <rect x="160" y="190" width="40" height="36" rx="10"
+                    fill="#C7AB8E" stroke="#C9A26B" stroke-width="1.6" stroke-dasharray="4 3"/>
+            </g>
+            <use href="#flatBody" fill="none" stroke="rgba(201,162,107,.8)" stroke-width="2.2"/>
+            <use href="#flatWaist" fill="rgba(201,162,107,.25)" stroke="rgba(201,162,107,.8)" stroke-width="1.6"/>
+          </svg>
+        </div>
+        <h3>棉裆加固 <em>COTTON GUSSET</em></h3>
+        <p class="mat-spec">裆部棉衬 · 吸湿透气 · 卫生舒适</p>
+        <p>裆部缝入一小块棉质衬裆：吸湿、透气、减少摩擦，
+          也免去化纤裆直接贴肤的闷热——日常款的重要分水岭，选购时先看这里。</p>
+      </article>
+
+      <article class="style-card">
+        <div class="style-swatch">
+          <svg class="style-fig" viewBox="0 0 360 470" role="img" aria-label="收腹裤头款平铺示意：腰腹至臀部织得更密更紧">
+            <g clip-path="url(#clipBody)">
+              <use href="#flatBody" fill="url(#skinFlat)"/>
+              <use href="#flatBody" fill="rgba(23,21,26,.45)"/>
+              <path d="M104 40 L256 40 L250 204 C215 220 145 220 110 204 Z" fill="rgba(23,21,26,.72)"/>
+              <path d="M106 208 C145 222 215 222 254 208" fill="none" stroke="#C9A26B" stroke-width="2" stroke-dasharray="6 4"/>
+            </g>
+            <use href="#flatWaist" fill="rgba(23,21,26,.85)" stroke="rgba(201,162,107,.8)" stroke-width="1.6"/>
+            <use href="#flatBody" fill="none" stroke="rgba(201,162,107,.8)" stroke-width="2.2"/>
+          </svg>
+        </div>
+        <h3>收腹裤头 <em>CONTROL TOP</em></h3>
+        <p class="mat-spec">加压裤身 · 轻塑形 · 腰腹致臀部</p>
+        <p>腰腹到臀部织得更紧更密，轻推收腹、顺带提臀。
+          好的 control top 裤头足够长，在腰上"切"出一道痕的多半是尺码不对。</p>
+      </article>
+
+      <article class="style-card">
+        <div class="style-swatch">
+          <svg class="style-fig" viewBox="0 0 360 470" role="img" aria-label="压力分级款平铺示意：脚踝最紧，向上压力递减">
+            <g clip-path="url(#clipBody)">
+              <use href="#flatBody" fill="url(#skinFlat)"/>
+              <use href="#flatBody" fill="url(#gradComp)"/>
+            </g>
+            <use href="#flatBody" fill="none" stroke="rgba(201,162,107,.8)" stroke-width="2.2"/>
+            <use href="#flatWaist" fill="rgba(201,162,107,.25)" stroke="rgba(201,162,107,.8)" stroke-width="1.6"/>
+          </svg>
+        </div>
+        <h3>压力分级 <em>COMPRESSION</em></h3>
+        <p class="mat-spec">踝部最紧 · 向上递减 · 运动/医用</p>
+        <p>梯度压力促进血液回流：脚踝压力最大，越向上越松。
+          运动恢复与久站久坐族的常用选择；医疗级压力袜请遵医嘱选购。</p>
+      </article>
+
+      <article class="style-card">
+        <div class="style-swatch">
+          <svg class="style-fig" viewBox="0 0 360 470" role="img" aria-label="防勾丝款平铺示意：高捻纱加密织造">
+            <g clip-path="url(#clipBody)">
+              <use href="#flatBody" fill="rgba(23,21,26,.5)"/>
+              <use href="#flatBody" fill="url(#ptFine)"/>
+            </g>
+            <use href="#flatBody" fill="none" stroke="rgba(201,162,107,.8)" stroke-width="2.2"/>
+            <use href="#flatWaist" fill="rgba(201,162,107,.25)" stroke="rgba(201,162,107,.8)" stroke-width="1.6"/>
+          </svg>
+        </div>
+        <h3>防勾丝 <em>RUN-RESISTANT</em></h3>
+        <p class="mat-spec">高捻纱 · 耐穿优先 · 光泽略低</p>
+        <p>以高捻度纱线与加密组织减缓脱散：勾到不会一路"开铁路"。
+          代价是手感稍硬、透明感略降——通勤厚款里最实用的取向。</p>
+      </article>
+
+      <article class="style-card">
+        <div class="style-swatch">
+          <svg class="style-fig" viewBox="0 0 360 470" role="img" aria-label="露趾款平铺示意：趾尖无加固层，金色虚线为分界">
+            <g clip-path="url(#clipBody)">
+              <use href="#flatBody" fill="url(#skinFlat)"/>
+              <use href="#flatBody" fill="rgba(23,21,26,.45)"/>
+              <ellipse cx="117" cy="430" rx="15" ry="22" transform="rotate(-18 117 430)"
+                       fill="#DDB694" stroke="#C9A26B" stroke-width="1.8" stroke-dasharray="4 3"/>
+              <ellipse cx="243" cy="430" rx="15" ry="22" transform="rotate(18 243 430)"
+                       fill="#DDB694" stroke="#C9A26B" stroke-width="1.8" stroke-dasharray="4 3"/>
+            </g>
+            <use href="#flatBody" fill="none" stroke="rgba(201,162,107,.8)" stroke-width="2.2"/>
+            <use href="#flatWaist" fill="rgba(201,162,107,.25)" stroke="rgba(201,162,107,.8)" stroke-width="1.6"/>
+          </svg>
+        </div>
+        <h3>露趾袜头 <em>SANDAL TOE</em></h3>
+        <p class="mat-spec">趾部无加固 · 鱼嘴鞋伴侣</p>
+        <p>袜头不做加深织造，趾部近乎隐形，专配鱼嘴凉鞋；
+          即便穿包头皮鞋，脚尖也不会在薄纱里"露馅"。行话就叫 sandal toe。</p>
+      </article>
+
+      <article class="style-card">
+        <div class="style-swatch">
+          <svg class="style-fig" viewBox="0 0 360 470" role="img" aria-label="踩脚款平铺示意：脚部留空，足弓踩脚带固定">
+            <g clip-path="url(#clipBody)">
+              <use href="#flatBody" fill="url(#skinFlat)"/>
+              <use href="#flatBody" fill="rgba(23,21,26,.45)"/>
+              <path d="M102 418 C110 410 121 409 129 414 C132 430 130 444 121 449 C110 454 99 448 98 435 C98 429 100 423 102 418 Z" fill="url(#skinFlat)"/>
+              <path d="M258 418 C250 410 239 409 231 414 C228 430 230 444 239 449 C250 454 261 448 262 435 C262 429 260 423 258 418 Z" fill="url(#skinFlat)"/>
+              <path d="M96 426 C108 417 122 417 134 425" fill="none" stroke="#C9A26B" stroke-width="4"/>
+              <path d="M264 426 C252 417 238 417 226 425" fill="none" stroke="#C9A26B" stroke-width="4"/>
+            </g>
+            <use href="#flatBody" fill="none" stroke="rgba(201,162,107,.8)" stroke-width="2.2"/>
+            <use href="#flatWaist" fill="rgba(201,162,107,.25)" stroke="rgba(201,162,107,.8)" stroke-width="1.6"/>
+          </svg>
+        </div>
+        <h3>踩脚 <em>STIRRUP</em></h3>
+        <p class="mat-spec">脚掌留空 · 踩脚带固定 · 舞蹈/瑜伽</p>
+        <p>只包腿不包脚，靠足弓处的踩脚带防滑固定：
+          练功房与瑜伽课的常客，不挤脚趾、边缘不上窜，光脚穿鞋也不冲突。</p>
+      </article>
+
+      <article class="style-card">
+        <div class="style-swatch">
+          <svg class="style-fig" viewBox="0 0 360 470" role="img" aria-label="网袜平铺示意：菱形网孔织法">
+            <g clip-path="url(#clipBody)">
+              <use href="#flatBody" fill="url(#skinFlat)"/>
+              <use href="#flatBody" fill="url(#ptNet)"/>
+            </g>
+            <use href="#flatBody" fill="none" stroke="rgba(201,162,107,.8)" stroke-width="2.2"/>
+            <use href="#flatWaist" fill="rgba(201,162,107,.25)" stroke="rgba(201,162,107,.8)" stroke-width="1.6"/>
+          </svg>
+        </div>
+        <h3>网袜 <em>FISHNET</em></h3>
+        <p class="mat-spec">菱形网孔 · 造型感 · 网目定风格</p>
+        <p>不靠密度靠图案：网目从细密到 oversized，气质从日常点缀一路走到朋克与时装屋。
+          网孔越大越张扬，也越挑场合。</p>
+      </article>
+
+      <article class="style-card">
+        <div class="style-swatch">
+          <svg class="style-fig" viewBox="0 0 360 470" role="img" aria-label="罗纹款平铺示意：竖向罗纹织法">
+            <g clip-path="url(#clipBody)">
+              <use href="#flatBody" fill="rgba(59,59,68,.6)"/>
+              <use href="#flatBody" fill="url(#ptRib)"/>
+            </g>
+            <use href="#flatBody" fill="none" stroke="rgba(201,162,107,.8)" stroke-width="2.2"/>
+            <use href="#flatWaist" fill="rgba(201,162,107,.25)" stroke="rgba(201,162,107,.8)" stroke-width="1.6"/>
+          </svg>
+        </div>
+        <h3>罗纹 <em>RIBBED</em></h3>
+        <p class="mat-spec">竖向纹路 · 复古学院气 · 秋冬</p>
+        <p>纹路沿腿长方向排列，视觉上收窄拉长，自带复古学院感。
+          多见于羊毛、棉等秋冬厚袜，是"针织感"穿搭的常用件。</p>
+      </article>
+
+      <article class="style-card">
+        <div class="style-swatch">
+          <svg class="style-fig" viewBox="0 0 360 470" role="img" aria-label="蕾丝款平铺示意：花纹镂空织法">
+            <g clip-path="url(#clipBody)">
+              <use href="#flatBody" fill="rgba(23,21,26,.3)"/>
+              <use href="#flatBody" fill="url(#ptLace)"/>
+            </g>
+            <use href="#flatBody" fill="none" stroke="rgba(201,162,107,.8)" stroke-width="2.2"/>
+            <use href="#flatWaist" fill="rgba(201,162,107,.25)" stroke="rgba(201,162,107,.8)" stroke-width="1.6"/>
+          </svg>
+        </div>
+        <h3>蕾丝 <em>LACE</em></h3>
+        <p class="mat-spec">花纹镂空 · 仪式感 · 需护甲</p>
+        <p>组织间直接留出花纹镂空，从极细网眼到华丽大花。
+          比薄纱更"盛装"，也更需要摘掉戒指、修平指甲——勾丝是蕾丝的天敌。</p>
+      </article>
+
+      <article class="style-card">
+        <div class="style-swatch">
+          <svg class="style-fig" viewBox="0 0 360 470" role="img" aria-label="提花款平铺示意：双色菱形提花图案">
+            <g clip-path="url(#clipBody)">
+              <use href="#flatBody" fill="rgba(35,43,69,.55)"/>
+              <use href="#flatBody" fill="url(#ptArgyle)"/>
+            </g>
+            <use href="#flatBody" fill="none" stroke="rgba(201,162,107,.8)" stroke-width="2.2"/>
+            <use href="#flatWaist" fill="rgba(201,162,107,.25)" stroke="rgba(201,162,107,.8)" stroke-width="1.6"/>
+          </svg>
+        </div>
+        <h3>提花图案 <em>PATTERNED</em></h3>
+        <p class="mat-spec">双色织入 · 波点/格纹/菱形 · 40D 起更清晰</p>
+        <p>织造时直接把图案织进织物：波点、格纹、菱形与爱心。
+          图案要清楚，通常 40D 起步——太薄的底布会让花纹糊成一团。</p>
+      </article>
+
+      <article class="style-card">
+        <div class="style-swatch">
+          <svg class="style-fig" viewBox="0 0 360 470" role="img" aria-label="假高筒款平铺示意：大腿处织出高筒袜分界线">
+            <g clip-path="url(#clipBody)">
+              <use href="#flatBody" fill="url(#skinFlat)"/>
+              <use href="#flatBody" fill="rgba(23,21,26,.42)"/>
+              <path d="M106 64 L254 64 L251 150 C215 164 145 164 109 150 Z" fill="rgba(110,36,54,.8)"/>
+              <path d="M108 152 C145 166 215 166 252 152" fill="none" stroke="#C9A26B" stroke-width="2" stroke-dasharray="3 3"/>
+            </g>
+            <use href="#flatBody" fill="none" stroke="rgba(201,162,107,.8)" stroke-width="2.2"/>
+            <use href="#flatWaist" fill="rgba(201,162,107,.25)" stroke="rgba(201,162,107,.8)" stroke-width="1.6"/>
+          </svg>
+        </div>
+        <h3>假高筒 <em>MOCK STOCKING</em></h3>
+        <p class="mat-spec">视错觉分界 · 复古风情</p>
+        <p>大腿处织出"高筒袜"的分界与袜口，连裤袜穿出吊带袜的复古观感——
+          省去吊袜带，风情不打折。复古造型与摄影里的常客。</p>
+      </article>
+
+      <article class="style-card">
+        <div class="style-swatch">
+          <svg class="style-fig" viewBox="0 0 360 470" role="img" aria-label="光腿神器平铺示意：外层肤色薄纱，内层抓绒">
+            <g clip-path="url(#clipBody)">
+              <use href="#flatBody" fill="url(#skinFlat)"/>
+              <use href="#flatBody" fill="rgba(227,191,164,.5)"/>
+              <use href="#flatBody" fill="url(#ptFuzz)"/>
+            </g>
+            <use href="#flatWaist" fill="rgba(120,90,70,.5)" stroke="rgba(201,162,107,.8)" stroke-width="1.6"/>
+            <use href="#flatBody" fill="none" stroke="rgba(201,162,107,.8)" stroke-width="2.2"/>
+          </svg>
+        </div>
+        <h3>光腿神器 <em>FLEECE-LINED</em></h3>
+        <p class="mat-spec">外薄内绒 · 冬季伪素腿 · 看三处</p>
+        <p>外层肤色薄纱、内层抓绒，冬天伪装裸腿。
+          选购看三处：肤色是否分深浅码、裤头会不会假白、内绒掉不掉毛。</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ 品牌馆 ═══════════════ -->
+<section class="brands" id="brands">
+  <div class="section-inner">
+    <div class="sec-head">
+      <p class="eyebrow">THE MAKERS — 品牌馆</p>
+      <h2>谁在做这双袜子。</h2>
+      <p class="sec-lede">从奥地利的奢华织造到义乌的超级产能，连裤袜是一条全球化的产业链。
+        按地区巡礼十六个代表品牌——只做科普性梳理，排名不分先后。</p>
+    </div>
+
+    <h3 class="region-head">欧洲 <em>EUROPE</em></h3>
+    <div class="brand-grid">
+      <article class="brand-card">
+        <span class="brand-tile" aria-hidden="true">W</span>
+        <div>
+          <h3>沃尔福特 <em>WOLFORD</em></h3>
+          <p class="brand-spec">奥地利 · 1950 · 奢华</p>
+          <p class="brand-desc">Fatal 系列"一袜成裙"，天鹅绒手感与无缝工艺是红毯与秀场的常客。</p>
+        </div>
+      </article>
+      <article class="brand-card">
+        <span class="brand-tile" aria-hidden="true">F</span>
+        <div>
+          <h3>法尔克 <em>FALKE</em></h3>
+          <p class="brand-spec">德国 · 1895 · 高端日常</p>
+          <p class="brand-desc">四代家族经营，以稳定的品质基本款与运动压力袜线著称，德式"讲究"的代表。</p>
+        </div>
+      </article>
+      <article class="brand-card">
+        <span class="brand-tile" aria-hidden="true">C</span>
+        <div>
+          <h3>卡泽多尼亚 <em>CALZEDONIA</em></h3>
+          <p class="brand-spec">意大利 · 1986 · 大众时尚</p>
+          <p class="brand-desc">全球连锁的"袜子橱窗"，花色款式库极大，入门试色与应季款的首选渠道之一。</p>
+        </div>
+      </article>
+      <article class="brand-card">
+        <span class="brand-tile" aria-hidden="true">Ò</span>
+        <div>
+          <h3>奥罗布鲁 <em>OROBLÙ</em></h3>
+          <p class="brand-spec">意大利 · 1994 · 高端薄透</p>
+          <p class="brand-desc">托斯卡纳织造，超薄款的均匀度与光泽出色，"素肌感"路线的代表厂牌。</p>
+        </div>
+      </article>
+      <article class="brand-card">
+        <span class="brand-tile" aria-hidden="true">C</span>
+        <div>
+          <h3>卡瓦利尼 <em>EMILIO CAVALLINI</em></h3>
+          <p class="brand-spec">意大利 · 1970 · 设计师款</p>
+          <p class="brand-desc">提花与印花图案袜的代表，条纹、格纹玩得出神入化，常年与时装屋合作。</p>
+        </div>
+      </article>
+      <article class="brand-card">
+        <span class="brand-tile" aria-hidden="true">D</span>
+        <div>
+          <h3>迪姆 <em>DIM</em></h3>
+          <p class="brand-spec">法国 · 1953 · 国民经典</p>
+          <p class="brand-desc">曾把连裤袜带进法国大众衣橱的品牌，Dim Up 系列长销至今。</p>
+        </div>
+      </article>
+      <article class="brand-card">
+        <span class="brand-tile" aria-hidden="true">G</span>
+        <div>
+          <h3>热尔贝 <em>GERBE</em></h3>
+          <p class="brand-spec">法国 · 1904 · 奢华传统</p>
+          <p class="brand-desc">从长筒丝袜时代延续下来的法国老铺，坚持本土制造，档案里存着整个世纪的花样。</p>
+        </div>
+      </article>
+      <article class="brand-card">
+        <span class="brand-tile" aria-hidden="true">G</span>
+        <div>
+          <h3>加塔 <em>GATTA</em></h3>
+          <p class="brand-spec">波兰 · 1993 · 高性价比</p>
+          <p class="brand-desc">波兰是欧洲袜业出口大国，Gatta 以平价与全色系见长，是欧洲"日常多买几双"的答案。</p>
+        </div>
+      </article>
+      <article class="brand-card">
+        <span class="brand-tile" aria-hidden="true">P</span>
+        <div>
+          <h3>蕾蒂波莉 <em>PRETTY POLLY</em></h3>
+          <p class="brand-spec">英国 · 1919 · 国民老牌</p>
+          <p class="brand-desc">诺丁汉袜都出品，超薄与无缝技术的普及者，英剧与街头一样常见。</p>
+        </div>
+      </article>
+      <article class="brand-card">
+        <span class="brand-tile" aria-hidden="true">S</span>
+        <div>
+          <h3>瑞典袜业 <em>SWEDISH STOCKINGS</em></h3>
+          <p class="brand-spec">瑞典 · 2010 · 可持续</p>
+          <p class="brand-desc">以回收尼龙织造连裤袜的新一代品牌，把环保主张做成了主业。</p>
+        </div>
+      </article>
+    </div>
+
+    <h3 class="region-head">美洲 <em>AMERICAS</em></h3>
+    <div class="brand-grid">
+      <article class="brand-card">
+        <span class="brand-tile" aria-hidden="true">C</span>
+        <div>
+          <h3>卡佩齐奥 <em>CAPEZIO</em></h3>
+          <p class="brand-spec">美国 · 1887 · 舞蹈专业</p>
+          <p class="brand-desc">纽约起家的舞蹈用品王国，芭蕾与舞蹈袜的行业标配，舞台后台随处可见。</p>
+        </div>
+      </article>
+      <article class="brand-card">
+        <span class="brand-tile" aria-hidden="true">L</span>
+        <div>
+          <h3>莱格丝 <em>L'EGGS</em></h3>
+          <p class="brand-spec">美国 · 1969 · 超市传奇</p>
+          <p class="brand-desc">鸡蛋形塑料盒把连裤袜摆上超市货架的零售史经典案例，包装本身就是广告。</p>
+        </div>
+      </article>
+    </div>
+
+    <h3 class="region-head">亚洲 <em>ASIA</em></h3>
+    <div class="brand-grid">
+      <article class="brand-card">
+        <span class="brand-tile" aria-hidden="true">厚</span>
+        <div>
+          <h3>厚木 <em>ATSUGI</em></h3>
+          <p class="brand-spec">日本 · 1907 · 国民薄透</p>
+          <p class="brand-desc">日本连裤袜市场长期第一的品牌，日常线 ASTIGU 在便利店与药妆店随处可见。</p>
+        </div>
+      </article>
+      <article class="brand-card">
+        <span class="brand-tile" aria-hidden="true">郡</span>
+        <div>
+          <h3>郡是 <em>GUNZE</em></h3>
+          <p class="brand-spec">日本 · 1896 · 综合老牌</p>
+          <p class="brand-desc">京都起家的袜品与内衣大型制造商，基础款扎实，技术积累跨越三个世纪。</p>
+        </div>
+      </article>
+      <article class="brand-card">
+        <span class="brand-tile" aria-hidden="true">浪</span>
+        <div>
+          <h3>浪莎 <em>LANGSHA</em></h3>
+          <p class="brand-spec">中国 · 1995 · 大众龙头</p>
+          <p class="brand-desc">义乌袜都的代表企业，产销规模居世界前列，商超货架上的"国民袜子"。</p>
+        </div>
+      </article>
+      <article class="brand-card">
+        <span class="brand-tile" aria-hidden="true">梦</span>
+        <div>
+          <h3>梦娜 <em>MONA</em></h3>
+          <p class="brand-spec">中国 · 1994 · 商超主力</p>
+          <p class="brand-desc">义乌系老牌，基本款与连裤袜的主力供应商，渠道覆盖全国的商超系统。</p>
+        </div>
+      </article>
+    </div>
+
+    <p class="brand-foot mono-dim">▸ 品牌信息为科普性梳理（产地 / 创立 / 定位），或有出入，以品牌官方信息为准；与本项目无任何商业关联。</p>
   </div>
 </section>
 
