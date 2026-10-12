@@ -224,6 +224,7 @@ const I18N = {
       'aria.mattabs': 'Fiber',
       'aria.legsvg': 'Pantyhose on-leg preview',
       'aria.drange': 'Denier, D',
+      'aria.github': 'GitHub repository',
     },
 
     /* app.js 数据对象的英文覆盖（键 = 中文原文，缺失时回退） */

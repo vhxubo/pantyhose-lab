@@ -5,7 +5,7 @@
 
 ## 运行
 
-线上版本（GitHub Pages）：<https://vhxubo.github.io/pantyhose-lab/>
+源码：<https://github.com/vhxubo/pantyhose-lab> · 线上版本（GitHub Pages）：<https://vhxubo.github.io/pantyhose-lab/>
 
 本地预览——纯静态站点，无构建步骤，任选一种方式：
 
