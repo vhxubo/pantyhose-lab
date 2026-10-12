@@ -5,7 +5,9 @@
 
 ## 运行
 
-纯静态站点，无构建步骤。任选一种方式：
+线上版本（GitHub Pages）：<https://vhxubo.github.io/pantyhose-lab/>
+
+本地预览——纯静态站点，无构建步骤，任选一种方式：
 
 ```bash
 cd pantyhose-lab
@@ -14,6 +16,12 @@ python3 -m http.server 8931
 ```
 
 或 `npx http-server -p 8931`。
+
+## 部署
+
+推送到 `main` 即自动部署：`.github/workflows/deploy.yml` 使用官方
+actions（configure-pages / upload-pages-artifact / deploy-pages），首次运行会自动启用
+Pages（`enablement: true`），无需手动到仓库设置里开关。
 
 ## 功能
 
